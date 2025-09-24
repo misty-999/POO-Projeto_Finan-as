@@ -1,2 +1,2 @@
-# POO-Projeto_Finan-as
+# POO-Projeto_Finanças
 Apenas gestão de finanças
