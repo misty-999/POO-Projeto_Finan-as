@@ -1,0 +1,63 @@
+@startuml CasosDeUso
+left to right direction
+actor "Membro" as M
+actor "Bibliotecário" as B
+
+rectangle "Sistema de Bilioteca" { 
+
+    usecase "Visualizar Itens" as UC1
+    usecase "Solicitar Iten" as UC2
+    usecase "Introduzir nª de menbro" as UC3
+    usecase "Verifcar emprestimos em atraso e multas" as UC4
+    usecase "Consultar informação do item" as UC5
+    usecase "Processar emprestimo" as UC6
+}
+
+ M -- UC1
+ M -- UC2
+ UC2 -- B
+ B -- UC3
+ B -- UC4
+ B -- UC5
+ B -- UC6
+ 
+ UC4 -- UC6 : <<condição>>
+ UC5 -- UC6 : <<condição>>
+ 
+@enduml
+
+
+@startuml
+class Membro {
+    -id : int
+    -nome : string
+    -email : string
+   -telefone : string
+}
+
+ class item{
+    -id : int
+    -titulo : string
+    -tipo : string
+    -disponivel : bool
+ }
+class Bibliotecario {
+    -id : int
+    -nome : string
+}
+class Emprestimo {
+    -id : int
+    -numeroMembro : int 
+}
+class Multa{
+    -id : int
+    -valor : double
+    -paga : bool
+    -dataMulta :date
+}
+Membro "1" -- "0..*" Emprestimo : faz >
+item "1" -- "0..*" Emprestimo : inclui >
+Membro "0" -- "0..*" Multa : recebe >
+Bibliotecario "1" -- "0..*" Emprestimo : processa >
+
+@enduml
