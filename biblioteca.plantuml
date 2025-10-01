@@ -1,63 +1,84 @@
 @startuml CasosDeUso
 left to right direction
-actor "Membro" as M
-actor "Bibliotecário" as B
+actor "Utilizador" as U
+actor "Administrador" as A
 
-rectangle "Sistema de Bilioteca" { 
+rectangle "Sistema de Gestão de Finanças Pessoais" { 
 
-    usecase "Visualizar Itens" as UC1
-    usecase "Solicitar Iten" as UC2
-    usecase "Introduzir nª de menbro" as UC3
-    usecase "Verifcar emprestimos em atraso e multas" as UC4
-    usecase "Consultar informação do item" as UC5
-    usecase "Processar emprestimo" as UC6
+    usecase "Registar Conta" as UC1
+    usecase "Login" as UC2
+    usecase "Gerir Perfil" as UC3
+    usecase "Adicionar Receita/Despesa" as UC4
+    usecase "Editar Receita/Despesa" as UC5
+    usecase "Remover Receita/Despesa" as UC6
+    usecase "Criar Categorias" as UC7
+    usecase "Consultar Relatórios" as UC8
+    usecase "Gerir Utilizadores" as UC9
 }
 
- M -- UC1
- M -- UC2
- UC2 -- B
- B -- UC3
- B -- UC4
- B -- UC5
- B -- UC6
- 
- UC4 -- UC6 : <<condição>>
- UC5 -- UC6 : <<condição>>
- 
+U -- UC1
+U -- UC2
+U -- UC3
+U -- UC4
+U -- UC5
+U -- UC6
+U -- UC7
+U -- UC8
+
+A -- UC2
+A -- UC9
 @enduml
 
-
-@startuml
-class Membro {
+@startuml Classes
+class Utilizador {
     -id : int
     -nome : string
     -email : string
-   -telefone : string
+    -password : string
+    -perfil : string
+    +registar()
+    +login()
 }
 
- class item{
+class Transacao {
     -id : int
-    -titulo : string
+    -descricao : string
+    -valor : double
+    -data : Date
     -tipo : string
-    -disponivel : bool
- }
-class Bibliotecario {
+    +validar()
+}
+
+class Categoria {
     -id : int
     -nome : string
 }
-class Emprestimo {
-    -id : int
-    -numeroMembro : int 
-}
-class Multa{
-    -id : int
-    -valor : double
-    -paga : bool
-    -dataMulta :date
-}
-Membro "1" -- "0..*" Emprestimo : faz >
-item "1" -- "0..*" Emprestimo : inclui >
-Membro "0" -- "0..*" Multa : recebe >
-Bibliotecario "1" -- "0..*" Emprestimo : processa >
 
+class Relatorio {
+    +calcularSaldo() : double
+    +totalReceitas(periodo) : double
+    +totalDespesas(periodo) : double
+    +listarTransacoesPorCategoria(categoria)
+}
+
+Utilizador "1" -- "0..*" Transacao : cria >
+Transacao "1" -- "1" Categoria : pertence >
+Utilizador "1" -- "0..*" Categoria : define >
+Utilizador "1" -- "0..*" Relatorio : consulta >
+@enduml
+
+@startuml Sequencia
+actor U as "Utilizador"
+boundary UI as "Interface Web"
+control SC as "Sistema"
+entity DB as "Base de Dados"
+
+U -> UI : Inserir dados da Transação
+UI -> SC : enviarTransacao(dados)
+SC -> Transacao : validar()
+Transacao -> Categoria : verificarCategoria()
+SC -> DB : guardarTransacao()
+DB --> SC : confirmação
+SC --> UI : "Transação adicionada com sucesso"
+UI --> U : Mensagem de sucesso
 @enduml
