@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestão de Finanças Pessoais</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <header>
+    <h1>Gestão de Finanças Pessoais</h1>
+  </header>
+
+  <main>
+    <section id="add-transaction">
+      <h2>Adicionar Transação</h2>
+      <form id="transaction-form">
+        <input type="text" id="descricao" placeholder="Descrição" required>
+        <input type="number" id="valor" placeholder="Valor (€)" step="0.01" required>
+        <input type="date" id="data" required>
+        <select id="tipo" required>
+          <option value="">-- Tipo --</option>
+          <option value="receita">Receita</option>
+          <option value="despesa">Despesa</option>
+        </select>
+        <input type="text" id="categoria" placeholder="Categoria" required>
+        <button type="submit">Adicionar</button>
+      </form>
+    </section>
+
+    <section id="transactions">
+      <h2>Transações</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Valor (€)</th>
+            <th>Data</th>
+            <th>Tipo</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="transaction-list"></tbody>
+      </table>
+    </section>
+
+    <section id="report">
+      <h2>Relatórios</h2>
+      <p><strong>Total Receitas:</strong> <span id="total-receitas">0</span> €</p>
+      <p><strong>Total Despesas:</strong> <span id="total-despesas">0</span> €</p>
+      <p><strong>Saldo Atual:</strong> <span id="saldo">0</span> €</p>
+    </section>
+  </main>
+
+  <script src="home.js"></script>
+</body>
+</html>

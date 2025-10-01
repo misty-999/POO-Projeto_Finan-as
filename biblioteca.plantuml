@@ -33,7 +33,6 @@ A -- UC9
 class Utilizador {
     -id : int
     -nome : string
-    -email : string
     -password : string
     -perfil : string
     +registar()
