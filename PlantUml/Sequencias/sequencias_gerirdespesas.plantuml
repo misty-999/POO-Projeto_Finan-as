@@ -2,9 +2,9 @@
 actor Utilizador
 
 
-Utilizador -> S: Adicionar/Editar/Eliminar receita
+Utilizador -> S: Adicionar/Editar/Eliminar despesa
 S -> S: Validar valor e categoria
-S -> BD: Atualizar dados da receita
+S -> BD: Atualizar dados da despesa
 BD --> S: Confirmação
 S --> Utilizador: Operação concluída
 @enduml

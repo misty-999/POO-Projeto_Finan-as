@@ -1,0 +1,13 @@
+@startuml
+actor Administrador
+
+
+Administrador -> S: Aceder à gestão de utilizadores
+S -> BD: Obter lista de utilizadores
+BD --> S: Enviar lista
+S --> Administrador: Mostrar lista
+Administrador -> S: Adicionar/Editar/Eliminar utilizador
+S -> BD: Atualizar dados do utilizador
+BD --> S: Confirmação
+S --> Administrador: Operação concluída
+@enduml

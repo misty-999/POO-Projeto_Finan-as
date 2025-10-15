@@ -1,0 +1,10 @@
+@startuml
+actor Utilizador
+
+
+Utilizador -> S: Criar/Editar/Eliminar categoria
+S -> S: Validar nome e tipo
+S -> BD: Atualizar categorias
+BD --> S: Confirmação
+S --> Utilizador: Categoria atualizada
+@enduml

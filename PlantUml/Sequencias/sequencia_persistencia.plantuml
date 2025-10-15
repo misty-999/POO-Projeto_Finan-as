@@ -1,0 +1,8 @@
+@startuml
+
+
+S -> BD: Guardar dados em ficheiro/base de dados
+BD --> S: Confirmação de gravação
+S -> BD: Carregar dados ao iniciar o sistema
+BD --> S: Dados carregados
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+actor Utilizador
+
+Utilizador -> S: Solicitar relatório financeiro
+S -> BD: Obter receitas e despesas
+BD --> S: Enviar dados
+S -> S: Calcular totais e saldo
+S --> Utilizador: Apresentar relatório
+@enduml
