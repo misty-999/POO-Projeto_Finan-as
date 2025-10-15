@@ -1,0 +1,34 @@
+@startuml
+title Diagrama de Sequência – Gestão de Receitas
+
+actor "Utilizador" as User
+participant "UIReceita" as UI
+participant "Receita" as Receita
+participant "Persistência" as Persistencia
+
+== Iniciar Consulta ==
+User -> UI: abrir ecrã de Gestão de Receitas
+UI -> Persistencia: carregarDados()
+Persistencia --> UI: lista de receitas
+
+== Listar Receitas ==
+UI -> User: mostrar lista de receitas
+
+== Selecionar Receita ==
+User -> UI: selecionar receita para ver/editar/remover
+UI -> Receita: obterDetalhes()
+Receita --> UI: detalhes da receita
+
+== Editar Receita (opcional) ==
+User -> UI: alterar dados da receita
+UI -> Receita: atualizarInformacoes()
+UI -> Persistencia: guardarAlteracoes()
+Persistencia --> UI: confirmação
+
+== Remover Receita (opcional) ==
+User -> UI: escolher remover receita
+UI -> Persistencia: eliminarReceita(id)
+Persistencia --> UI: confirmação
+UI --> User: "Alterações guardadas com sucesso"
+
+@enduml
