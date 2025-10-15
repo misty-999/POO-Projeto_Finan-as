@@ -1,0 +1,11 @@
+@startuml
+title Diagrama de Sequência – Gerir Perfil
+
+actor "Utilizador" as U
+participant "Sistema" as S
+
+U -> S: Alterar nome, email ou password
+S -> S: Validar alterações
+S --> U: Perfil atualizado com sucesso
+
+@enduml
