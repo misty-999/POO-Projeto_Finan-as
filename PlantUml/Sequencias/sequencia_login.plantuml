@@ -1,0 +1,11 @@
+@startuml
+title Diagrama de Sequência – Login
+
+actor "Utilizador" as U
+participant "Sistema" as S
+
+U -> S: Inserir email e password
+S -> S: Validar credenciais
+S --> U: Login efetuado com sucesso
+
+@enduml

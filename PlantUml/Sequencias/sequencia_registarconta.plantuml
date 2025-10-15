@@ -1,0 +1,11 @@
+@startuml
+title Diagrama de Sequência – Registar Conta
+
+actor "Utilizador" as U
+participant "Sistema" as S
+
+U -> S: Inserir nome, email, password
+S -> S: Validar dados
+S --> U: Conta registada com sucesso
+
+@enduml
