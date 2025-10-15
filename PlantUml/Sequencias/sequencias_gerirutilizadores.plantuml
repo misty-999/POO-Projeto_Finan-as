@@ -1,13 +1,11 @@
 @startuml
-actor Administrador
+title Diagrama de Sequência – Gerir Utilizadores
 
+actor "Administrador" as A
+participant "Sistema" as S
 
-Administrador -> S: Aceder à gestão de utilizadores
-S -> BD: Obter lista de utilizadores
-BD --> S: Enviar lista
-S --> Administrador: Mostrar lista
-Administrador -> S: Adicionar/Editar/Eliminar utilizador
-S -> BD: Atualizar dados do utilizador
-BD --> S: Confirmação
-S --> Administrador: Operação concluída
+A -> S: Selecionar utilizador
+S -> S: Editar ou remover dados
+S --> A: Utilizador atualizado com sucesso
+
 @enduml

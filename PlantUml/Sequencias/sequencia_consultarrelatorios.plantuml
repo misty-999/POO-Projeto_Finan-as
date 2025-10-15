@@ -1,9 +1,11 @@
 @startuml
-actor Utilizador
+title Diagrama de Sequência – Consultar Relatórios
 
-Utilizador -> S: Solicitar relatório financeiro
-S -> BD: Obter receitas e despesas
-BD --> S: Enviar dados
-S -> S: Calcular totais e saldo
-S --> Utilizador: Apresentar relatório
+actor "Utilizador" as U
+participant "Sistema" as S
+
+U -> S: Selecionar período ou categoria
+S -> S: Gerar relatório
+S --> U: Mostrar relatório
+
 @enduml

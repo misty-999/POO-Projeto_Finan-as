@@ -1,10 +1,11 @@
 @startuml
-actor Utilizador
+title Diagrama de Sequência – Gerir Receita
 
+actor "Utilizador" as U
+participant "Sistema" as S
 
-Utilizador -> S: Adicionar/Editar/Eliminar receita
-S -> S: Validar valor e categoria
-S -> BD: Atualizar dados da receita
-BD --> S: Confirmação
-S --> Utilizador: Operação concluída
+U -> S: Inserir descrição, valor, data e categoria
+S -> S: Validar dados
+S --> U: Receita guardada com sucesso
+
 @enduml

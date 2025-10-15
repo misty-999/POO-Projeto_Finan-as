@@ -1,10 +1,11 @@
 @startuml
-actor Utilizador
+title Diagrama de Sequência – Gerir Categorias
 
+actor "Utilizador" as U
+participant "Sistema" as S
 
-Utilizador -> S: Criar/Editar/Eliminar categoria
-S -> S: Validar nome e tipo
-S -> BD: Atualizar categorias
-BD --> S: Confirmação
-S --> Utilizador: Categoria atualizada
+U -> S: Criar ou editar categoria
+S -> S: Validar nome da categoria
+S --> U: Categoria atualizada com sucesso
+
 @enduml

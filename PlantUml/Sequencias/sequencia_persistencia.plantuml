@@ -1,8 +1,11 @@
 @startuml
+title Diagrama de Sequência – Guardar Dados
 
+actor "Utilizador" as U
+participant "Sistema" as S
 
-S -> BD: Guardar dados em ficheiro/base de dados
-BD --> S: Confirmação de gravação
-S -> BD: Carregar dados ao iniciar o sistema
-BD --> S: Dados carregados
+U -> S: Guardar dados
+S -> S: Confirmar operação
+S --> U: Dados guardados com sucesso
+
 @enduml
