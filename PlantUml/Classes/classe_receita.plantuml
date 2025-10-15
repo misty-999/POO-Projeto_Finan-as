@@ -1,0 +1,16 @@
+@startuml
+title Classe Receita
+
+class Receita {
+  - descricao : String
+  - valor : double
+  - data : String
+  - categoria : Categoria
+
+  + criarNova()
+  + guardarInformacoes()
+  +getters() :void
+  +setters() :void 
+
+}
+@enduml

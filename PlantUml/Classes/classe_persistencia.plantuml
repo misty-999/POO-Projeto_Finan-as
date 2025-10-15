@@ -1,0 +1,10 @@
+@startuml
+title Classe Persistência
+
+class Persistencia {
+  + carregarDados()
+  + guardarReceita()
+  +getters() :void
+  +setters() :void 
+}
+@enduml

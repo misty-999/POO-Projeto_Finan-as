@@ -1,0 +1,11 @@
+@startuml
+title Classe UIReceita
+
+class UIReceita {
+  + abrirEcrãReceita()
+  + inserirDados()
+  + confirmarGuardar()
+  +getters() :void
+  +setters() :void 
+}
+@enduml

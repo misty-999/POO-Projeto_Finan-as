@@ -1,0 +1,12 @@
+@startuml
+title Classe Categoria
+
+class Categoria {
+  - nome : String
+  + associarCategoria()
+  + validarCategoria()
+  +getters() :void
+  +setters() :void 
+}
+@enduml
+
