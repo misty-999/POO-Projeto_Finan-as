@@ -17,6 +17,8 @@ class Transacao {
     -data : Date
     -tipo : string  ' receita ou despesa
     +validar()
+    +getters() :void
+    +setters() :void
 }
 
 class Categoria {
