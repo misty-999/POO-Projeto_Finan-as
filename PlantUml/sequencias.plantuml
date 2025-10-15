@@ -1,0 +1,29 @@
+@startuml
+title Diagrama de Sequência – Adicionar Receita
+
+actor "Utilizador" as User
+participant "UIReceita" as UI
+participant "Receita" as Receita
+participant "Categoria" as Categoria
+participant "Persistência" as Persistencia
+
+== Iniciar Sistema ==
+User -> Persistencia: carregarDados()
+Persistencia --> User: dados carregados
+
+== Adicionar Nova Receita ==
+User -> UI: abrir ecrã de Receita
+UI -> Receita: criar nova Receita()
+Receita -> Categoria: associarCategoria()
+
+User -> UI: inserir descrição, valor, data e categoria
+UI -> Receita: guardarInformações()
+
+Receita -> Categoria: validarCategoria()
+Categoria --> Receita: categoria válida
+
+User -> UI: confirmar guardar
+UI -> Persistencia: guardarReceita(Receita)
+Persistencia --> UI: confirmação
+UI --> User: "Receita guardada com sucesso"
+@enduml
