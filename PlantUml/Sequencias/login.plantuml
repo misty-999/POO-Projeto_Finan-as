@@ -1,11 +1,13 @@
-@startuml
-title Diagrama de Sequência – Login
+@startuml Login
+actor Utilizador
+boundary Interface
+control GestorConta
+entity Persistencia
 
-actor "Utilizador" as U
-participant "Sistema" as S
-
-U -> S: Inserir email e password
-S -> S: Validar credenciais
-S --> U: Login efetuado com sucesso
-
+Utilizador -> Interface: Introduz email e senha
+Interface -> GestorConta: Solicita autenticação
+GestorConta -> Persistencia: Verifica utilizador(email, senha)
+Persistencia --> GestorConta: Resultado (válido/inválido)
+GestorConta --> Interface: Resposta de autenticação
+Interface --> Utilizador: Mostra mensagem (Login OK / Falhou)
 @enduml

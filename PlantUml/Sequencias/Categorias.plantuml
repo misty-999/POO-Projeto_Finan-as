@@ -1,11 +1,13 @@
-@startuml
-title Diagrama de Sequência – Gerir Categorias
+@startuml GerirCategorias
+actor Utilizador
+boundary Interface
+control GestorCategoria
+entity Persistencia
 
-actor "Utilizador" as U
-participant "Sistema" as S
-
-U -> S: Criar ou editar categoria
-S -> S: Validar nome da categoria
-S --> U: Categoria atualizada com sucesso
-
+Utilizador -> Interface: Adiciona/Remove/Altera categoria
+Interface -> GestorCategoria: Envia operação e dados
+GestorCategoria -> Persistencia: Atualiza categoria na BD
+Persistencia --> GestorCategoria: Confirma alteração
+GestorCategoria --> Interface: Mensagem de sucesso
+Interface --> Utilizador: Mostra feedback
 @enduml

@@ -1,11 +1,14 @@
 @startuml
-title Diagrama de Sequência – Registar Conta
+@startuml RegistarConta
+actor Utilizador
+boundary Interface
+control GestorConta
+entity Persistencia
 
-actor "Utilizador" as U
-participant "Sistema" as S
-
-U -> S: Inserir nome, email, password
-S -> S: Validar dados
-S --> U: Conta registada com sucesso
-
+Utilizador -> Interface: Introduz dados (nome, email, senha)
+Interface -> GestorConta: Envia dados do novo utilizador
+GestorConta -> Persistencia: Guardar dados no ficheiro/BD
+Persistencia --> GestorConta: Confirma registo
+GestorConta --> Interface: Mensagem "Conta criada com sucesso"
+Interface --> Utilizador: Mostra confirmação
 @enduml
