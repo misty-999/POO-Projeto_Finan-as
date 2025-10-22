@@ -7,8 +7,7 @@ rectangle "Sistema de Gestão de Finanças Pessoais" {
     usecase "Registar Conta" as UC1
     usecase "Login" as UC2
     usecase "Gerir Perfil" as UC3
-    usecase "Gerir Receitas" as UC4
-    usecase "Gerir Despesas" as UC5
+    usecase "Gerir Transações" as UC4        
     usecase "Gerir Categorias" as UC6
     usecase "Consultar Relatórios" as UC7
     usecase "Gerir Utilizadores" as UC8
@@ -19,7 +18,6 @@ U -- UC1
 U -- UC2
 U -- UC3
 U -- UC4
-U -- UC5
 U -- UC6
 U -- UC7
 U -- UC9
