@@ -1,4 +1,4 @@
 public class Persistencia
 {
-    String conexaoDB;
+    String conexaoDB{ get; set; }
 }   

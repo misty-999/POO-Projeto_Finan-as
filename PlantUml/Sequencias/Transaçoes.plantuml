@@ -1,0 +1,38 @@
+@startuml Sequencia_Gerir_Transacoes_Simples
+title Gerir Transações — Adicionar e Remover 
+
+actor Utilizador as U
+participant "Página D (UI)" as UI
+participant "TransacaoService" as TS
+database "Persistencia" as DB
+
+== Adicionar ==
+U -> UI: Inserir dados da nova transação\n(descrição, valor, tipo, data, categoria)
+UI -> TS: Adicionar(u, transacao)
+TS -> TS: Validar dados (valor >= 0, descrição != vazia)
+alt Dados válidos
+    TS -> DB: Guardar transação (INSERT)
+    DB --> TS: OK
+    TS --> UI: Sucesso
+    UI --> U: Mostrar mensagem "Transação adicionada"
+else Dados inválidos
+    TS --> UI: Mensagem de erro
+    UI --> U: Mostrar aviso
+end
+
+== Remover ==
+U -> UI: Selecionar transação e clicar "Remover"
+UI -> TS: Remover(u, transacaoId)
+TS -> DB: Procurar transação pelo Id
+DB --> TS: Encontrada / Não encontrada
+alt Encontrada
+    TS -> DB: Eliminar transação (DELETE)
+    DB --> TS: OK
+    TS --> UI: Sucesso
+    UI --> U: Mostrar "Transação removida"
+else Não encontrada
+    TS --> UI: Erro "Transação não existe"
+    UI --> U: Mostrar erro
+end
+
+@enduml

@@ -1,7 +1,7 @@
 public class Utizador
 {
-    int id;
-    String nome;
-    String email;
-    String senha;
+    int id{ get; set; }
+    String nome{ get; set; }
+    String email{ get; set; }
+    String senha{ get; set; }
 }

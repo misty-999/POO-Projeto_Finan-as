@@ -1,5 +1,5 @@
 public class Categoria
 {
-    int id;
-    String nome;
+    int id{ get; set; }
+    String nome{ get; set; }
 }

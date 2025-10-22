@@ -1,29 +1,23 @@
 @startuml
-title Diagrama de Sequência – Adicionar Receita
+title Sequência Gestao de Finanças Pessoais
+actor "Utilizador" as U
+participant "Sistema" as S
+U -> S: Registar Conta
+S --> U: Conta registada com sucesso
+U -> S: Login
+S --> U: Autenticação bem-sucedida
+U -> S: Gerir Perfil
+S --> U: Perfil atualizado
+U -> S: Gerir Transações
+S --> U: Transação adicionada/atualizada/removida~
+U -> S: Gerir Categorias
+S --> U: Categoria adicionada/atualizada/removida
+U -> S: Consultar Relatórios
+S --> U: Relatórios exibidos
+U -> S: Guardar Dados (Persistência)
+S --> U: Dados guardados com sucesso
 
-actor "Utilizador" as User
-participant "UIReceita" as UI
-participant "Receita" as Receita
-participant "Categoria" as Categoria
-participant "Persistência" as Persistencia
 
-== Iniciar Sistema ==
-User -> Persistencia: carregarDados()
-Persistencia --> User: dados carregados
 
-== Adicionar Nova Receita ==
-User -> UI: abrir ecrã de Receita
-UI -> Receita: criar nova Receita()
-Receita -> Categoria: associarCategoria()
 
-User -> UI: inserir descrição, valor, data e categoria
-UI -> Receita: guardarInformações()
-
-Receita -> Categoria: validarCategoria()
-Categoria --> Receita: categoria válida
-
-User -> UI: confirmar guardar
-UI -> Persistencia: guardarReceita(Receita)
-Persistencia --> UI: confirmação
-UI --> User: "Receita guardada com sucesso"
 @enduml

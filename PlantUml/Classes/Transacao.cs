@@ -1,8 +1,8 @@
-public class Transaçao
+public class Transacao
 {
-    int id;
-    DateTime data;
-    float valor;
-    String descricao;
+    public int Id { get; set; }
+    public DateTime Data { get; set; }
+    public float Valor { get; set; }
+    public string Descricao { get; set; }
 }
 
