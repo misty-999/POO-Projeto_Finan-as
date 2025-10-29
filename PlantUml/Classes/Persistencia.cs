@@ -1,4 +1,5 @@
 public class Persistencia
 {
-    String conexaoDB{ get; set; }
+    String caminhoArquivo { get; set; }
+    
 }   

@@ -4,5 +4,6 @@ public class Transacao
     public DateTime Data { get; set; }
     public float Valor { get; set; }
     public string Descricao { get; set; }
-}
+    public int Categoria { get; set; }
+}   
 
