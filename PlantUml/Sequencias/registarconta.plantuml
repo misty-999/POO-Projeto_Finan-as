@@ -1,14 +1,9 @@
 @startuml
-@startuml RegistarConta
 actor Utilizador
-boundary Interface
-control GestorConta
-entity Persistencia
-
-Utilizador -> Interface: Introduz dados (nome, email, senha)
-Interface -> GestorConta: Envia dados do novo utilizador
-GestorConta -> Persistencia: Guardar dados no ficheiro/BD
-Persistencia --> GestorConta: Confirma registo
-GestorConta --> Interface: Mensagem "Conta criada com sucesso"
-Interface --> Utilizador: Mostra confirmação
+Utilizador -> InterfaceRegisto : Pedir registo
+InterfaceRegisto -> Conta : Criar nova conta
+Conta -> GuardarDados : Guardar conta
+GuardarDados --> Conta : Conta guardada
+Conta --> InterfaceRegisto : Sucesso
+InterfaceRegisto --> Utilizador : Conta registada
 @enduml

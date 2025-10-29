@@ -1,13 +1,7 @@
-@startuml Login
+@startuml
 actor Utilizador
-boundary Interface
-control GestorConta
-entity Persistencia
-
-Utilizador -> Interface: Introduz email e senha
-Interface -> GestorConta: Solicita autenticação
-GestorConta -> Persistencia: Verifica utilizador(email, senha)
-Persistencia --> GestorConta: Resultado (válido/inválido)
-GestorConta --> Interface: Resposta de autenticação
-Interface --> Utilizador: Mostra mensagem (Login OK / Falhou)
+Utilizador -> InterfaceLogin : Introduzir email e senha
+InterfaceLogin -> GuardarDados : Verificar credenciais
+GuardarDados --> InterfaceLogin : Resultado (válido/inválido)
+InterfaceLogin --> Utilizador : Mostrar mensagem
 @enduml
