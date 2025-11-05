@@ -13,8 +13,3 @@ public class Administrador : Utilizador
         Console.WriteLine("A gerar relatórios...");
     }
 }
-public enum TipoUtilizador
-{
-    Administrador,
-    UsuarioComum
-}
