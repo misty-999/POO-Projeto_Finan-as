@@ -6,9 +6,3 @@ public class Utilizador
     String senha { get; set; }
     String perfil { get; set; }
 }
-
-public enum PerfilUtilizador
-{
-    Administrador,
-    UsuarioComum
-}
