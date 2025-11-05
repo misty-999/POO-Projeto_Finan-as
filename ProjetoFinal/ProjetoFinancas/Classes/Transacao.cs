@@ -5,5 +5,11 @@ public class Transacao
     public float Valor { get; set; }
     public string Descricao { get; set; }
     public int Categoria { get; set; }
-}   
+}
+public enum TipoTransacao
+{
+    Receita,
+    Despesa
+}
+
 

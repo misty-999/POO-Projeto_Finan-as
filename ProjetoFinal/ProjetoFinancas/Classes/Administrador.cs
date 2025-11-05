@@ -1,12 +1,20 @@
-public class Administrador : Utilizador  {
+public class Administrador : Utilizador
+{
 
-    public void GerirUtilizadores() {
+    public void GerirUtilizadores()
+    {
 
         Console.WriteLine("A gerir utilizadores...");
     }
 
-    public void GerarRelatorios() {
+    public void GerarRelatorios()
+    {
 
         Console.WriteLine("A gerar relatórios...");
     }
+}
+public enum TipoUtilizador
+{
+    Administrador,
+    UsuarioComum
 }

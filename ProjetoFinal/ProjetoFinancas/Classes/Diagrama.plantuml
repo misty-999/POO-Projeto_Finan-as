@@ -1,6 +1,6 @@
-@startuml
-title Diagrama de Classes - Gestão de Finanças Pessoais
 
+title Diagrama de Classes - Gestão de Finanças Pessoais
+@startuml
 
 class Utilizador {
   - id : int
@@ -13,12 +13,6 @@ class Utilizador {
   + login() : bool
   + editarPerfil() : void
 }
-class Administrador {
-  --
-  + gerirUtilizadores() : void
-  + gerarRelatorios() : void
-}
-
 
 class Transacao {
   - id : int
@@ -44,7 +38,6 @@ class Persistencia {
 }
 
 
-Administrador --|> Utilizador
 Utilizador "1" --> "*" Transacao : cria
 Transacao "*" --> "1" Categoria : pertence
 Utilizador --> Persistencia : grava/carrega
