@@ -44,11 +44,10 @@ class Persistencia {
   + carregarDados() : List<Transacao>
 }
 
-' ==== RELAÇÕES ENTRE CLASSES ====
+
 Administrador --|> Utilizador
 Utilizador "1" --> "*" Transacao : cria
 Transacao "*" --> "1" Categoria : pertence
-Relatorio --> Transacao : usa
 Utilizador --> Persistencia : grava/carrega
 Transacao --> Persistencia : grava/carrega
 @enduml
