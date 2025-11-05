@@ -1,13 +1,9 @@
-public class Persistencia
+namespace ProjetoFinancas.Classes
 {
-    String caminhoArquivo { get; set; }
+    public class Persistencia
+    {
+        String caminhoArquivo { get; set; }
 
-}   
+    }
 
-public enum TipoPersistencia
-{
-    Texto,
-    Binario,
-    XML,
-    JSON
 }

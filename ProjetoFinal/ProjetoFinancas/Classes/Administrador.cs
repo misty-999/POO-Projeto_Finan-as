@@ -1,20 +1,17 @@
-public class Administrador : Utilizador
+using System;
+
+namespace ProjetoFinancas.Classes
 {
-
-    public void GerirUtilizadores()
+    public class Administrador : Utilizador
     {
+        public void GerirUtilizadores()
+        {
+            Console.WriteLine("A gerir utilizadores...");
+        }
 
-        Console.WriteLine("A gerir utilizadores...");
+        public void GerarRelatorios()
+        {
+            Console.WriteLine("A gerar relatórios...");
+        }
     }
-
-    public void GerarRelatorios()
-    {
-
-        Console.WriteLine("A gerar relatórios...");
-    }
-}
-public enum TipoUtilizador
-{
-    Administrador,
-    UsuarioComum
 }

@@ -1,8 +1,11 @@
+using ProjetoFinancas;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
-app.UseStaticFiles();
+app.UseStaticFiles(); 
 app.MapGet("/", async context =>
+
 {
-    context.Response.Redirect("index.html");
+ context.Response.Redirect("index.html");
 });
 app.Run();

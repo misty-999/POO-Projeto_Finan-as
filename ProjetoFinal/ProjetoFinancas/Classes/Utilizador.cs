@@ -1,8 +1,20 @@
-public class Utilizador
+using System;
+
+namespace ProjetoFinancas.Classes
 {
-    int id { get; set; }
-    String nome { get; set; }
-    String email { get; set; }
-    String senha { get; set; }
-    String perfil { get; set; }
+    public class Utilizador
+    {
+        
+        public int Id { get; set; }
+        public string Nome { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Senha { get; set; } = string.Empty;
+        public string Perfil { get; set; } = string.Empty;
+
+
+        public void Registar()
+        {
+            Console.WriteLine("Utilizador registado (método Registar chamado).");
+        }
+    }
 }

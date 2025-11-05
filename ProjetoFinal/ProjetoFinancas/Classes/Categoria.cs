@@ -1,15 +1,11 @@
-public class Categoria
+namespace ProjetoFinancas.Classes
 {
-    int id { get; set; }
-    string nome { get; set; }
+    public class Categoria
+    {
+        int id { get; set; }
+        string nome { get; set; }
 
-}
-public enum TipoCategoria
-{
-    Alimentacao,
-    Transporte,
-    Moradia,
-    Lazer,
-    Saude,
-    Outros
+    }
+
+
 }
