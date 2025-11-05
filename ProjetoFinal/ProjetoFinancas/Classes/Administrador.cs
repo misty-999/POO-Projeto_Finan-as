@@ -1,4 +1,4 @@
-public class Administrador  {
+public class Administrador : Utilizador  {
 
     public void GerirUtilizadores() {
 
