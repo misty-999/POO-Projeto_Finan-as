@@ -13,10 +13,12 @@ class Utilizador {
   + login() : bool
   + editarPerfil() : void
 }
-
 class Administrador {
+  --
   + gerirUtilizadores() : void
+  + gerarRelatorios() : void
 }
+
 
 class Transacao {
   - id : int
@@ -24,7 +26,6 @@ class Transacao {
   - valor : float
   - data : date
   - categoria : string
-  - tipo : string ' receita ou despesa
   --
   + validarValor() : bool
   + guardarTransacao() : void
@@ -34,14 +35,12 @@ class Categoria {
   - nome : string
   --
   + criarCategoria() : void
-  + listarCategorias() : List<string>
 }
 
 
 class Persistencia {
   --
   + guardarDados() : void
-  + carregarDados() : List<Transacao>
 }
 
 
