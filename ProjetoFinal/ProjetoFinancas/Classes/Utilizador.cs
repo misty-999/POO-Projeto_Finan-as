@@ -1,4 +1,4 @@
-public class Utizador
+public class Utilizador
 {
     int id{ get; set; }
     String nome{ get; set; }
