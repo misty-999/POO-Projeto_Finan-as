@@ -1,7 +1,7 @@
 var transacoes = [];
 
 function carregar() {
-    console.log('Carregando transações...');
+    console.log('A carregar transações...');
     fetch('/transacoes')
         .then(function(resposta) {
             console.log('Status:', resposta.status);
@@ -59,18 +59,17 @@ function mostrar() {
     var i = 0;
     while (i < transacoes.length) {
         var t = transacoes[i];
-        var dataParts = t.date.split('T')[0].split('-');
-        var d = dataParts[2] + '/' + dataParts[1] + '/' + dataParts[0];
+        var d = new Date(t.date).toLocaleDateString('pt-PT', { timeZone: 'UTC' });
         var v = t.amount.toFixed(2);
         
         var html = '<tr>';
-        html = html + '<td>' + t.name + '</td>';
-        html = html + '<td>' + v + ' €</td>';
-        html = html + '<td>' + d + '</td>';
-        html = html + '<td>' + t.type + '</td>';
-        html = html + '<td>' + t.category + '</td>';
-        html = html + '<td><button class="delete-btn" onclick="deletar(' + t.number + ')">Eliminar</button></td>';
-        html = html + '</tr>';
+        html += '<td>' + t.name + '</td>';
+        html += '<td>' + v + ' €</td>';
+        html += '<td>' + d + '</td>';
+        html += '<td>' + t.type + '</td>';
+        html += '<td>' + t.category + '</td>';
+        html += '<td><button class="delete-btn" onclick="deletar(' + t.number + ')">Eliminar</button></td>';
+        html += '</tr>';
         
         tabela.innerHTML = tabela.innerHTML + html;
         i = i + 1;
