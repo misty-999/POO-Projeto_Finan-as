@@ -31,7 +31,7 @@ function adicionar(evento) {
     
     var transacao = {
         name: descricao,
-        date: new Date(data),
+        date: data,
         type: tipo,
         category: categoria,
         amount: parseFloat(valor)
@@ -59,7 +59,8 @@ function mostrar() {
     var i = 0;
     while (i < transacoes.length) {
         var t = transacoes[i];
-        var d = new Date(t.date).toLocaleDateString();
+        var dataParts = t.date.split('T')[0].split('-');
+        var d = dataParts[2] + '/' + dataParts[1] + '/' + dataParts[0];
         var v = t.amount.toFixed(2);
         
         var html = '<tr>';
