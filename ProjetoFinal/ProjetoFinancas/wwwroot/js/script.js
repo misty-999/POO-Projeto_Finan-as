@@ -25,13 +25,15 @@ function adicionar(evento) {
     var valor = document.getElementById('valor').value;
     var data = document.getElementById('data').value;
     var tipo = document.getElementById('tipo').value;
+    var categoria = document.getElementById('categoria').value;
     
-    console.log('Descrição:', descricao, 'Valor:', valor, 'Data:', data, 'Tipo:', tipo);
+    console.log('Descrição:', descricao, 'Valor:', valor, 'Data:', data, 'Tipo:', tipo, 'Categoria:', categoria);
     
     var transacao = {
         name: descricao,
         date: new Date(data),
         type: tipo,
+        category: categoria,
         amount: parseFloat(valor)
     };
     
@@ -65,6 +67,7 @@ function mostrar() {
         html = html + '<td>' + v + ' €</td>';
         html = html + '<td>' + d + '</td>';
         html = html + '<td>' + t.type + '</td>';
+        html = html + '<td>' + t.category + '</td>';
         html = html + '<td><button class="delete-btn" onclick="deletar(' + t.number + ')">Eliminar</button></td>';
         html = html + '</tr>';
         

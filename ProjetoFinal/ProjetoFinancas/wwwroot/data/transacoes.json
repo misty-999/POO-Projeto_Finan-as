@@ -1,16 +1,1 @@
-[
-  {
-    "Number": 1,
-    "Name": "teste",
-    "Date": "0001-11-01T00:00:00Z",
-    "Type": "Receita",
-    "Amount": 1
-  },
-  {
-    "Number": 2,
-    "Name": "teste",
-    "Date": "0022-02-22T00:00:00Z",
-    "Type": "Despesa",
-    "Amount": 2
-  }
-]
+[]
