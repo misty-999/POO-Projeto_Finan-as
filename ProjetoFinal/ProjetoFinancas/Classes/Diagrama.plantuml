@@ -1,45 +1,44 @@
-
-title Diagrama de Classes - Gestão de Finanças Pessoais
 @startuml
 
+title Diagrama de Classes - Gestão de Finanças Pessoais
+
 class Utilizador {
-  - id : int
-  - nome : string
-  - email : string
-  - password : string
-  - perfil : string
-  --
-  + registar() : void
-  + login() : bool
-  + editarPerfil() : void
+  + Id : int
+  + Nome : string
+  + Email : string
+  + Senha : string
+  + Perfil : string
+}
+
+class Administrador {
+  + VerRelatorios() : void
+  + GerirUtilizadores() : void
 }
 
 class Transacao {
-  - id : int
-  - descricao : string
-  - valor : float
-  - data : date
-  - categoria : string
-  --
-  + validarValor() : bool
-  + guardarTransacao() : void
+  + Number : int
+  + Name : string
+  + Date : DateTime
+  + Type : string
+  + Amount : decimal
 }
 
 class Categoria {
-  - nome : string
-  --
-  + criarCategoria() : void
+  + Id : int
+  + Nome : string
+  + Descricao : string
 }
-
 
 class Persistencia {
-  --
-  + guardarDados() : void
+  + GuardarTransacoes() : Task
+  + CarregarTransacoes() : Task
+  + GuardarCategorias() : Task
+  + CarregarCategorias() : Task
 }
 
+Administrador --|> Utilizador : herda
+Transacao --> Categoria : usa
+Persistencia --> Transacao : grava/carrega
+Persistencia --> Categoria : grava/carrega
 
-Utilizador "1" --> "*" Transacao : cria
-Transacao "*" --> "1" Categoria : pertence
-Utilizador --> Persistencia : grava/carrega
-Transacao --> Persistencia : grava/carrega
 @enduml

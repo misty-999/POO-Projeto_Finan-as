@@ -13,16 +13,15 @@
   <main>
     <section id="add-transaction">
       <h2>Adicionar Transação</h2>
-      <form id="transaction-form">
+      <form id="transaction-form" onsubmit="adicionar(event)">
         <input type="text" id="descricao" placeholder="Descrição" required>
         <input type="number" id="valor" placeholder="Valor (€)" step="0.01" required>
         <input type="date" id="data" required>
         <select id="tipo" required>
           <option value="">-- Tipo --</option>
-          <option value="receita">Receita</option>
-          <option value="despesa">Despesa</option>
+          <option value="Receita">Receita</option>
+          <option value="Despesa">Despesa</option>
         </select>
-        <input type="text" id="categoria" placeholder="Categoria" required>
         <button type="submit">Adicionar</button>
       </form>
     </section>
@@ -36,18 +35,17 @@
             <th>Valor (€)</th>
             <th>Data</th>
             <th>Tipo</th>
-            <th>Categoria</th>
             <th>Ações</th>
           </tr>
         </thead>
-        <tbody id="transaction-list"></tbody>
+        <tbody id="tabelaTransacoes"></tbody>
       </table>
     </section>
 
     <section id="report">
       <h2>Relatórios</h2>
-      <p><strong>Total Receitas:</strong> <span id="total-receitas">0</span> €</p>
-      <p><strong>Total Despesas:</strong> <span id="total-despesas">0</span> €</p>
+      <p><strong>Total Receitas:</strong> <span id="totalReceitas">0</span> €</p>
+      <p><strong>Total Despesas:</strong> <span id="totalDespesas">0</span> €</p>
       <p><strong>Saldo Atual:</strong> <span id="saldo">0</span> €</p>
     </section>
   </main>

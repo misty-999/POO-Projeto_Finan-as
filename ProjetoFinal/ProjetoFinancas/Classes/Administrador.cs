@@ -6,12 +6,12 @@ namespace ProjetoFinancas.Classes
     {
         public void GerirUtilizadores()
         {
-            Console.WriteLine("A gerir utilizadores...");
+            Console.WriteLine(" utilizadores...");
         }
 
         public void GerarRelatorios()
         {
-            Console.WriteLine("A gerar relatórios...");
+            Console.WriteLine(" relatórios...");
         }
     }
 }

@@ -2,8 +2,15 @@
   {
     "Number": 1,
     "Name": "teste",
-    "Date": "2004-02-03T00:00:00Z",
-    "Type": "receita",
-    "Amount": 3
+    "Date": "0001-11-01T00:00:00Z",
+    "Type": "Receita",
+    "Amount": 1
+  },
+  {
+    "Number": 2,
+    "Name": "teste",
+    "Date": "0022-02-22T00:00:00Z",
+    "Type": "Despesa",
+    "Amount": 2
   }
 ]
