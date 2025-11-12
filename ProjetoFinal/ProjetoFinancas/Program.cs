@@ -12,7 +12,10 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-// Lista temporária para armazenar dados (em produção, use um banco de dados)
+// Inicializa o sistema de persistência
+var persistencia = new Persistencia();
+
+// Carrega dados existentes
 var utilizadores = new List<Utilizador>();
 var transacoes = new List<Transacao>();
 var categorias = new List<Categoria>
@@ -24,6 +27,24 @@ var categorias = new List<Categoria>
     new Categoria { Id = 5, Nome = "Saúde", Descricao = "Despesas com saúde" }
 };
 
+// Carrega transações e utilizadores do ficheiro
+_ = Task.Run(async () =>
+{
+    transacoes.AddRange(await persistencia.CarregarTransacoes());
+    utilizadores.AddRange(await persistencia.CarregarUtilizadores());
+    var categoriasCarregadas = await persistencia.CarregarCategorias();
+    if (categoriasCarregadas.Count > 0)
+    {
+        categorias.Clear();
+        categorias.AddRange(categoriasCarregadas);
+    }
+    else
+    {
+        // Guarda as categorias padrão se não existirem
+        await persistencia.GuardarCategorias(categorias);
+    }
+});
+
 // Rota inicial - Redireciona para index.html
 app.MapGet("/", context =>
 {
@@ -34,10 +55,11 @@ app.MapGet("/", context =>
 // ============== ROTAS DE UTILIZADOR ==============
 app.MapGet("/utilizador", () => Results.Ok(utilizadores));
 
-app.MapPost("/utilizador", (Utilizador utilizador) =>
+app.MapPost("/utilizador", async (Utilizador utilizador) =>
 {
     utilizador.Id = utilizadores.Count + 1;
     utilizadores.Add(utilizador);
+    await persistencia.GuardarUtilizadores(utilizadores);
     return Results.Created($"/utilizador/{utilizador.Id}", utilizador);
 });
 
@@ -55,30 +77,33 @@ app.MapGet("/transacoes", () =>
     return Results.Ok(transacoes);
 });
 
-app.MapPost("/transacoes", (Transacao transacao) =>
+app.MapPost("/transacoes", async (Transacao transacao) =>
 {
     transacao.Number = transacoes.Count + 1;
     transacoes.Add(transacao);
+    await persistencia.GuardarTransacoes(transacoes);
     return Results.Created($"/transacoes/{transacao.Number}", transacao);
 });
 
-app.MapDelete("/transacoes/{number}", (int number) =>
+app.MapDelete("/transacoes/{number}", async (int number) =>
 {
     var transacao = transacoes.FirstOrDefault(t => t.Number == number);
     if (transacao == null)
         return Results.NotFound();
 
     transacoes.Remove(transacao);
+    await persistencia.GuardarTransacoes(transacoes);
     return Results.Ok();
 });
 
 // ============== ROTAS DE CATEGORIA ==============
 app.MapGet("/categorias", () => Results.Ok(categorias));
 
-app.MapPost("/categorias", (Categoria categoria) =>
+app.MapPost("/categorias", async (Categoria categoria) =>
 {
     categoria.Id = categorias.Count + 1;
     categorias.Add(categoria);
+    await persistencia.GuardarCategorias(categorias);
     return Results.Created($"/categorias/{categoria.Id}", categoria);
 });
 

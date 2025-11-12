@@ -6,10 +6,15 @@ namespace ProjetoFinancas.Classes
     {
         // Properties
         public int Number { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public DateTime Date { get; set; }
-        public string Type { get; set; } // "Debit" or "Credit"
+        public string Type { get; set; } = string.Empty; // "Debit" or "Credit"
         public decimal Amount { get; set; }
+
+        // Construtor sem parâmetros (necessário para deserialization)
+        public Transacao()
+        {
+        }
 
         // Constructor
         public Transacao(int number, string name, DateTime date, string type, decimal amount)
