@@ -1,7 +1,12 @@
+// script.js: lógica do frontend (muito simples)
+// - controla modais de login/registo
+// - chama endpoints: /login, /registar, /transacoes
+// Nota: o estado de autenticação é mantido apenas em memória (não persiste entre reloads)
 var transacoes = [];
 var usuarioLogado = false;
 var usuarioAtual = null;
 
+// Mostrar o modal de login
 function mostrar_login() {
     document.getElementById('login-modal').style.display = 'flex';
     document.getElementById('registar-modal').style.display = 'none';
@@ -23,6 +28,7 @@ function fazer_login(evento) {
         senha: senha
     };
     
+    // Envia credenciais para o backend; espera 200 ou 401
     fetch('/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -38,7 +44,7 @@ function fazer_login(evento) {
     .then(function(dados) {
         usuarioLogado = true;
         usuarioAtual = dados;
-        // mostrar nome no header e botão sair
+        // Mostrar nome no header e botão sair; carregar transações após login
         document.getElementById('user-name').textContent = dados.nome;
         document.getElementById('user-info').style.display = 'inline-block';
         document.getElementById('login-modal').style.display = 'none';
@@ -74,12 +80,8 @@ function fazer_registar(evento) {
         return;
     }
     
-    var utilizador = {
-        nome: nome,
-        senha: senha,
-        perfil: 'comum'
-    };
-    
+    // Envia novo utilizador para o backend; backend valida unicidade do Nome
+    var utilizador = { nome: nome, senha: senha, perfil: 'comum' };
     fetch('/registar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -102,20 +104,11 @@ function fazer_registar(evento) {
 }
 
 function carregar() {
-    console.log('A carregar transações...');
+    // Busca todas as transações (o servidor devolve a lista em memória)
     fetch('/transacoes')
-        .then(function(resposta) {
-            console.log('Status:', resposta.status);
-            return resposta.json();
-        })
-        .then(function(dados) {
-            console.log('Dados recebidos:', dados);
-            transacoes = dados;
-            mostrar();
-        })
-        .catch(function(erro) {
-            console.log('Erro ao carregar:', erro);
-        });
+        .then(function(resposta) { return resposta.json(); })
+        .then(function(dados) { transacoes = dados; mostrar(); })
+        .catch(function(erro) { console.log('Erro ao carregar:', erro); });
 }
 
 function adicionar(evento) {
@@ -138,19 +131,10 @@ function adicionar(evento) {
         amount: parseFloat(valor)
     };
     
-    fetch('/transacoes', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(transacao)
-    })
-    .then(function(resposta) {
-        console.log('Resposta recebida:', resposta);
-        document.querySelector('form').reset();
-        carregar();
-    })
-    .catch(function(erro) {
-        console.log('Erro ao adicionar:', erro);
-    });
+    // Envia a transação para o servidor que a grava em transacoes.json
+    fetch('/transacoes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(transacao) })
+        .then(function(resposta) { document.getElementById('form-transacao').reset(); carregar(); })
+        .catch(function(erro) { console.log('Erro ao adicionar:', erro); });
 }
 
 function mostrar() {
@@ -160,7 +144,8 @@ function mostrar() {
     var i = 0;
     while (i < transacoes.length) {
         var t = transacoes[i];
-        var d = new Date(t.date).toLocaleDateString('pt-PT', { timeZone: 'UTC' });
+    // Formata data para visualização (evita problemas de timezone)
+    var d = new Date(t.date).toLocaleDateString('pt-PT', { timeZone: 'UTC' });
         var v = t.amount.toFixed(2);
         
         var html = '<tr>';
@@ -212,7 +197,7 @@ function calcular() {
 }
 
 window.onload = function() {
-    // start showing login modal; do NOT carregar transações until login
+  
     document.getElementById('login-modal').style.display = 'flex';
     document.getElementById('registar-modal').style.display = 'none';
     document.getElementById('conteudo-principal').style.display = 'none';

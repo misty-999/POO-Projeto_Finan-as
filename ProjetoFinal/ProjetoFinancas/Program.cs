@@ -1,3 +1,9 @@
+// Program.cs: entrypoint do backend. Define endpoints HTTP simples (minimal APIs)
+// - /registar : regista novo utilizador (Nome + Senha)
+// - /login    : autentica por Nome + Senha
+// - /transacoes (GET/POST/DELETE) : CRUD básico de transações
+// Persistência: usa a classe Persistencia para ler/gravar ficheiros JSON em wwwroot/data/
+// Nota de segurança: senhas são comparadas em texto plano neste exemplo — não usar em produção.
 using ProjetoFinancas.Classes;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,18 +29,24 @@ app.MapGet("/", context =>
     return context.Response.SendFileAsync(Path.Combine(app.Environment.WebRootPath, "index.html"));
 });
 
+// Endpoint: registar novo utilizador
+// Recebe JSON com um Utilizador (Nome, Senha, Perfil). Verifica unicidade do Nome,
+// adiciona à lista em memória e grava em utilizadores.json.
 app.MapPost("/registar", async (Utilizador novo) =>
 {
-    // Registar por Nome (não usamos email no registo)
     if (utilizadores.Any(u => u.Nome == novo.Nome))
         return Results.BadRequest("Nome já existe");
-    
+
     novo.Id = utilizadores.Count + 1;
     utilizadores.Add(novo);
     await persistencia.GuardarUtilizadores(utilizadores);
     return Results.Ok(novo);
 });
 
+// Endpoint: login
+// Recebe LoginRequest (Nome, Senha). Procura utilizador na lista carregada da persistência.
+// Retorna 200 com dados mínimos do utilizador ou 401 se as credenciais falharem.
+// Nota: para produção, comparar hashes em vez de texto simples e devolver um token/cookie.
 app.MapPost("/login", (LoginRequest request) =>
 {
     var user = utilizadores.FirstOrDefault(u => u.Nome == request.Nome && u.Senha == request.Senha);
@@ -44,11 +56,11 @@ app.MapPost("/login", (LoginRequest request) =>
     return Results.Ok(new { id = user.Id, nome = user.Nome, email = user.Email });
 });
 
-app.MapGet("/transacoes", () =>
-{
-    return Results.Ok(transacoes);
-});
+// Endpoint: obter todas as transações (em memória)
+app.MapGet("/transacoes", () => Results.Ok(transacoes));
 
+// Endpoint: criar transação
+// Recebe um objeto Transacao (name, amount, date, type, category). Atribui Number e grava.
 app.MapPost("/transacoes", async (Transacao nova) =>
 {
     nova.Number = transacoes.Count + 1;
@@ -57,12 +69,12 @@ app.MapPost("/transacoes", async (Transacao nova) =>
     return Results.Ok(nova);
 });
 
+// Endpoint: apagar transação por número
 app.MapDelete("/transacoes/{number}", async (int number) =>
 {
     var trans = transacoes.FirstOrDefault(t => t.Number == number);
-    if (trans == null)
-        return Results.NotFound();
-    
+    if (trans == null) return Results.NotFound();
+
     transacoes.Remove(trans);
     await persistencia.GuardarTransacoes(transacoes);
     return Results.Ok();
@@ -70,8 +82,3 @@ app.MapDelete("/transacoes/{number}", async (int number) =>
 
 app.Run();
 
-public class LoginRequest
-{
-    public string Nome { get; set; } = string.Empty;
-    public string Senha { get; set; } = string.Empty;
-}
