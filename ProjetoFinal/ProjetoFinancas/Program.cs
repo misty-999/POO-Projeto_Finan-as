@@ -56,6 +56,7 @@ app.MapPost("/login", (LoginRequest request) =>
     return Results.Ok(new { id = user.Id, username = user.Username });
 });
 
+
 // Endpoint: obter todas as transações (em memória)
 app.MapGet("/transacoes", () => Results.Ok(transacoes));
 

@@ -13,9 +13,14 @@
   },
   {
     "Id": 3,
-    "Nome": "Miguel1",
-    "Email": "",
-    "Senha": "123",
+    "Username": "",
+    "Password": "",
+    "Perfil": "comum"
+  },
+  {
+    "Id": 4,
+    "Username": "Miguel1",
+    "Password": "123",
     "Perfil": "comum"
   }
 ]
