@@ -1,5 +1,6 @@
 var transacoes = [];
 var usuarioLogado = false;
+var usuarioAtual = null;
 
 function mostrar_login() {
     document.getElementById('login-modal').style.display = 'flex';
@@ -14,11 +15,11 @@ function mostrar_registar() {
 function fazer_login(evento) {
     evento.preventDefault();
     
-    var email = document.getElementById('email').value;
+    var nome = document.getElementById('nome-login').value;
     var senha = document.getElementById('senha').value;
-    
+
     var credenciais = {
-        email: email,
+        nome: nome,
         senha: senha
     };
     
@@ -31,12 +32,17 @@ function fazer_login(evento) {
         if (resposta.ok) {
             return resposta.json();
         } else {
-            throw new Error('Email ou senha incorretos!');
+            throw new Error('Nome ou senha incorretos!');
         }
     })
     .then(function(dados) {
         usuarioLogado = true;
+        usuarioAtual = dados;
+        // mostrar nome no header e botão sair
+        document.getElementById('user-name').textContent = dados.nome;
+        document.getElementById('user-info').style.display = 'inline-block';
         document.getElementById('login-modal').style.display = 'none';
+        document.getElementById('registar-modal').style.display = 'none';
         document.getElementById('conteudo-principal').style.display = 'block';
         document.getElementById('login-form').reset();
         carregar();
@@ -46,11 +52,20 @@ function fazer_login(evento) {
     });
 }
 
+function fazer_logout() {
+    usuarioLogado = false;
+    usuarioAtual = null;
+    // esconder conteúdo e mostrar login
+    document.getElementById('conteudo-principal').style.display = 'none';
+    document.getElementById('user-info').style.display = 'none';
+    document.getElementById('user-name').textContent = '';
+    document.getElementById('login-modal').style.display = 'flex';
+}
+
 function fazer_registar(evento) {
     evento.preventDefault();
     
     var nome = document.getElementById('nome').value;
-    var email = document.getElementById('email-registar').value;
     var senha = document.getElementById('senha-registar').value;
     var confirmacao = document.getElementById('senha-confirmacao').value;
     
@@ -61,7 +76,6 @@ function fazer_registar(evento) {
     
     var utilizador = {
         nome: nome,
-        email: email,
         senha: senha,
         perfil: 'comum'
     };
@@ -198,6 +212,9 @@ function calcular() {
 }
 
 window.onload = function() {
-    carregar();
+    // start showing login modal; do NOT carregar transações until login
+    document.getElementById('login-modal').style.display = 'flex';
+    document.getElementById('registar-modal').style.display = 'none';
+    document.getElementById('conteudo-principal').style.display = 'none';
 };
 
