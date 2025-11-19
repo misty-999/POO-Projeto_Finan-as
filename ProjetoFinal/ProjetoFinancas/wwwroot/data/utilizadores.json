@@ -5,5 +5,12 @@
     "Email": "miguellmarqques13@gmail.com",
     "Senha": "Miguel882006",
     "Perfil": "comum"
+  },
+  {
+    "Id": 2,
+    "Nome": "utilizador",
+    "Email": "teste@gmail.com",
+    "Senha": "teste",
+    "Perfil": "comum"
   }
 ]
