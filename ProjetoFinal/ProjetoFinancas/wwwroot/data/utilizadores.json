@@ -1,16 +1,14 @@
 [
   {
     "Id": 1,
-    "Nome": "Miguel",
-    "Email": "miguellmarqques13@gmail.com",
-    "Senha": "Miguel882006",
+    "Username": "teste",
+    "Password": "1234",
     "Perfil": "comum"
   },
   {
     "Id": 2,
-    "Nome": "utilizador",
-    "Email": "teste@gmail.com",
-    "Senha": "teste",
+    "Username": "teste2",
+    "Password": "1234",
     "Perfil": "comum"
   }
 ]

@@ -13,93 +13,92 @@ function mostrar_registar() {
 
 function fazer_login(evento) {
     evento.preventDefault();
-    
-    var email = document.getElementById('email').value;
-    var senha = document.getElementById('senha').value;
-    
+
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
     var credenciais = {
-        email: email,
-        senha: senha
+        username: username,
+        password: password
     };
-    
+
     fetch('/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(credenciais)
     })
-    .then(function(resposta) {
-        if (resposta.ok) {
-            return resposta.json();
-        } else {
-            throw new Error('Email ou senha incorretos!');
-        }
-    })
-    .then(function(dados) {
-        usuarioLogado = true;
-        document.getElementById('login-modal').style.display = 'none';
-        document.getElementById('conteudo-principal').style.display = 'block';
-        document.getElementById('login-form').reset();
-        carregar();
-    })
-    .catch(function(erro) {
-        alert('Erro: ' + erro.message);
-    });
+        .then(function (resposta) {
+            if (resposta.ok) {
+                return resposta.json();
+            } else {
+                throw new Error('Utilizador ou password incorretos!');
+            }
+        })
+        .then(function (dados) {
+            usuarioLogado = true;
+            document.getElementById('login-modal').style.display = 'none';
+            document.getElementById('conteudo-principal').style.display = 'block';
+            document.getElementById('login-form').reset();
+            carregar();
+        })
+        .catch(function (erro) {
+            alert('Erro: ' + erro.message);
+        });
 }
 
 function fazer_registar(evento) {
     evento.preventDefault();
-    
-    var nome = document.getElementById('nome').value;
-    var email = document.getElementById('email-registar').value;
-    var senha = document.getElementById('senha-registar').value;
-    var confirmacao = document.getElementById('senha-confirmacao').value;
-    
-    if (senha !== confirmacao) {
-        alert('As senhas não correspondem!');
+
+    var username = document.getElementById('username-registar').value;
+    // var email = document.getElementById('email-registar').value;
+    var password = document.getElementById('password-registar').value;
+    var confirmacao = document.getElementById('password-confirmacao').value;
+
+    if (password !== confirmacao) {
+        alert('As passwords não correspondem!');
         return;
     }
-    
+
     var utilizador = {
-        nome: nome,
-        email: email,
-        senha: senha,
+        username: username,
+        password: password,
         perfil: 'comum'
     };
-    
+
     fetch('/registar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(utilizador)
     })
-    .then(function(resposta) {
-        if (resposta.ok) {
-            alert('Registo realizado com sucesso! Faz login agora.');
-            document.getElementById('registar-form').reset();
-            mostrar_login();
-        } else {
-            return resposta.text().then(function(texto) {
-                alert('Erro: ' + texto);
-            });
-        }
-    })
-    .catch(function(erro) {
-        alert('Erro ao registar: ' + erro);
-    });
+        .then(function (resposta) {
+            if (resposta.ok) {
+                alert('Registo realizado com sucesso! Faz login agora.');
+                document.getElementById('registar-form').reset();
+                mostrar_login();
+            } else {
+                return resposta.text().then(function (texto) {
+                    alert('Erro: ' + texto);
+                });
+            }
+        })
+        .catch(function (erro) {
+            alert('Erro ao registar: ' + erro);
+        });
 }
 
 function carregar() {
     console.log('A carregar transações...');
     fetch('/transacoes')
-        .then(function(resposta) {
+        .then(function (resposta) {
             console.log('Status:', resposta.status);
             return resposta.json();
         })
-        .then(function(dados) {
+        .then(function (dados) {
             console.log('Dados recebidos:', dados);
             transacoes = dados;
             mostrar();
         })
-        .catch(function(erro) {
+        .catch(function (erro) {
             console.log('Erro ao carregar:', erro);
         });
 }
@@ -107,15 +106,15 @@ function carregar() {
 function adicionar(evento) {
     evento.preventDefault();
     console.log('Função adicionar chamada!');
-    
+
     var descricao = document.getElementById('descricao').value;
     var valor = document.getElementById('valor').value;
     var data = document.getElementById('data').value;
     var tipo = document.getElementById('tipo').value;
     var categoria = document.getElementById('categoria').value;
-    
+
     console.log('Descrição:', descricao, 'Valor:', valor, 'Data:', data, 'Tipo:', tipo, 'Categoria:', categoria);
-    
+
     var transacao = {
         name: descricao,
         date: data,
@@ -123,32 +122,32 @@ function adicionar(evento) {
         category: categoria,
         amount: parseFloat(valor)
     };
-    
+
     fetch('/transacoes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(transacao)
     })
-    .then(function(resposta) {
-        console.log('Resposta recebida:', resposta);
-        document.querySelector('form').reset();
-        carregar();
-    })
-    .catch(function(erro) {
-        console.log('Erro ao adicionar:', erro);
-    });
+        .then(function (resposta) {
+            console.log('Resposta recebida:', resposta);
+            document.querySelector('form').reset();
+            carregar();
+        })
+        .catch(function (erro) {
+            console.log('Erro ao adicionar:', erro);
+        });
 }
 
 function mostrar() {
     var tabela = document.getElementById('tabelaTransacoes');
     tabela.innerHTML = '';
-    
+
     var i = 0;
     while (i < transacoes.length) {
         var t = transacoes[i];
         var d = new Date(t.date).toLocaleDateString('pt-PT', { timeZone: 'UTC' });
         var v = t.amount.toFixed(2);
-        
+
         var html = '<tr>';
         html += '<td>' + t.name + '</td>';
         html += '<td>' + v + ' €</td>';
@@ -157,11 +156,11 @@ function mostrar() {
         html += '<td>' + t.category + '</td>';
         html += '<td><button class="delete-btn" onclick="deletar(' + t.number + ')">Eliminar</button></td>';
         html += '</tr>';
-        
+
         tabela.innerHTML = tabela.innerHTML + html;
         i = i + 1;
     }
-    
+
     calcular();
 }
 
@@ -169,7 +168,7 @@ function deletar(numero) {
     var ok = confirm('Tem a certeza?');
     if (ok == true) {
         fetch('/transacoes/' + numero, { method: 'DELETE' })
-            .then(function(resposta) {
+            .then(function (resposta) {
                 carregar();
             });
     }
@@ -178,7 +177,7 @@ function deletar(numero) {
 function calcular() {
     var receitas = 0;
     var despesas = 0;
-    
+
     var i = 0;
     while (i < transacoes.length) {
         var t = transacoes[i];
@@ -189,15 +188,15 @@ function calcular() {
         }
         i = i + 1;
     }
-    
+
     var saldo = receitas - despesas;
-    
+
     document.getElementById('totalReceitas').textContent = receitas.toFixed(2);
     document.getElementById('totalDespesas').textContent = despesas.toFixed(2);
     document.getElementById('saldo').textContent = saldo.toFixed(2);
 }
 
-window.onload = function() {
+window.onload = function () {
     carregar();
 };
 

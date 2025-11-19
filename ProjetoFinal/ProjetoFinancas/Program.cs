@@ -25,8 +25,8 @@ app.MapGet("/", context =>
 
 app.MapPost("/registar", async (Utilizador novo) =>
 {
-    if (utilizadores.Any(u => u.Email == novo.Email))
-        return Results.BadRequest("Email já existe");
+    if (utilizadores.Any(u => u.Username == novo.Username))
+        return Results.BadRequest("Utilizador já existe");
     
     novo.Id = utilizadores.Count + 1;
     utilizadores.Add(novo);
@@ -36,11 +36,11 @@ app.MapPost("/registar", async (Utilizador novo) =>
 
 app.MapPost("/login", (LoginRequest request) =>
 {
-    var user = utilizadores.FirstOrDefault(u => u.Email == request.Email && u.Senha == request.Senha);
+    var user = utilizadores.FirstOrDefault(u => u.Username == request.Username && u.Password == request.Password);
     if (user == null)
         return Results.Unauthorized();
     
-    return Results.Ok(new { id = user.Id, nome = user.Nome, email = user.Email });
+    return Results.Ok(new { id = user.Id, username = user.Username });
 });
 
 app.MapGet("/transacoes", () =>
@@ -71,6 +71,6 @@ app.Run();
 
 public class LoginRequest
 {
-    public string Email { get; set; } = string.Empty;
-    public string Senha { get; set; } = string.Empty;
+    public string Username { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
 }
