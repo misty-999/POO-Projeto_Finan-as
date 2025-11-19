@@ -4,52 +4,126 @@ using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-/*
- Persistencia.cs
- - Responsabilidade: ler e gravar listas simples como ficheiros JSON em wwwroot/data/
- - Usado por Program.cs para persistir Utilizadores, Transacoes e Categorias.
- - Observações:
-   * Este é um método simples e direto, adequado para protótipos.
-   * Não é otimizado para escrita concorrente: se vários pedidos escreverem ao mesmo tempo,
-     pode haver perda de dados. Para produção, usar uma base de dados ou mecanismos de travas.
-*/
 namespace ProjetoFinancas.Classes
 {
     public class Persistencia
     {
-        // Base path para os ficheiros JSON
-        private string caminhoBase;
+        private string caminhoArquivo { get; set; }
 
-        public Persistencia(string _unused = "")
+        public Persistencia(string nomeArquivo = "dados.json")
         {
-            // Pasta onde os JSON ficam (visível pelo servidor estático)
-            caminhoBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "data");
-            if (!Directory.Exists(caminhoBase)) Directory.CreateDirectory(caminhoBase);
+            // Usa a pasta wwwroot/data para armazenar ficheiros JSON
+            string pastaData = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "data");
+            
+            // Cria a pasta se não existir
+            if (!Directory.Exists(pastaData))
+            {
+                Directory.CreateDirectory(pastaData);
+            }
+
+            caminhoArquivo = Path.Combine(pastaData, nomeArquivo);
         }
 
-        // Helpers genéricos para ler/gravar listas
-        private async Task SaveListAsync<T>(string fileName, List<T> list)
+        // Guardar utilizadores em JSON
+        public async Task GuardarUtilizadores(List<Utilizador> utilizadores)
         {
-            var path = Path.Combine(caminhoBase, fileName);
-            var json = JsonSerializer.Serialize(list, new JsonSerializerOptions { WriteIndented = true });
-            await File.WriteAllTextAsync(path, json);
+            try
+            {
+                string json = JsonSerializer.Serialize(utilizadores, new JsonSerializerOptions { WriteIndented = true });
+                await File.WriteAllTextAsync(caminhoArquivo.Replace("dados.json", "utilizadores.json"), json);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao guardar utilizadores: {ex.Message}");
+            }
         }
 
-        private async Task<List<T>> LoadListAsync<T>(string fileName)
+        // Carregar utilizadores do JSON
+        public async Task<List<Utilizador>> CarregarUtilizadores()
         {
-            var path = Path.Combine(caminhoBase, fileName);
-            if (!File.Exists(path)) return new List<T>();
-            var json = await File.ReadAllTextAsync(path);
-            return JsonSerializer.Deserialize<List<T>>(json) ?? new List<T>();
+            try
+            {
+                string caminhoUtilizadores = caminhoArquivo.Replace("dados.json", "utilizadores.json");
+                if (File.Exists(caminhoUtilizadores))
+                {
+                    string json = await File.ReadAllTextAsync(caminhoUtilizadores);
+                    return JsonSerializer.Deserialize<List<Utilizador>>(json) ?? new List<Utilizador>();
+                }
+                return new List<Utilizador>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao carregar utilizadores: {ex.Message}");
+                return new List<Utilizador>();
+            }
         }
 
-        // Métodos públicos (específicos para o projecto)
-        public Task GuardarUtilizadores(List<Utilizador> list) => SaveListAsync("utilizadores.json", list);
-        public Task GuardarTransacoes(List<Transacao> list) => SaveListAsync("transacoes.json", list);
-        public Task GuardarCategorias(List<Categoria> list) => SaveListAsync("categorias.json", list);
+        // Guardar transações em JSON
+        public async Task GuardarTransacoes(List<Transacao> transacoes)
+        {
+            try
+            {
+                string json = JsonSerializer.Serialize(transacoes, new JsonSerializerOptions { WriteIndented = true });
+                await File.WriteAllTextAsync(caminhoArquivo.Replace("dados.json", "transacoes.json"), json);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao guardar transações: {ex.Message}");
+            }
+        }
 
-        public Task<List<Utilizador>> CarregarUtilizadores() => LoadListAsync<Utilizador>("utilizadores.json");
-        public Task<List<Transacao>> CarregarTransacoes() => LoadListAsync<Transacao>("transacoes.json");
-        public Task<List<Categoria>> CarregarCategorias() => LoadListAsync<Categoria>("categorias.json");
+        // Carregar transações do JSON
+        public async Task<List<Transacao>> CarregarTransacoes()
+        {
+            try
+            {
+                string caminhoTransacoes = caminhoArquivo.Replace("dados.json", "transacoes.json");
+                if (File.Exists(caminhoTransacoes))
+                {
+                    string json = await File.ReadAllTextAsync(caminhoTransacoes);
+                    return JsonSerializer.Deserialize<List<Transacao>>(json) ?? new List<Transacao>();
+                }
+                return new List<Transacao>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao carregar transações: {ex.Message}");
+                return new List<Transacao>();
+            }
+        }
+
+        // Guardar categorias em JSON
+        public async Task GuardarCategorias(List<Categoria> categorias)
+        {
+            try
+            {
+                string json = JsonSerializer.Serialize(categorias, new JsonSerializerOptions { WriteIndented = true });
+                await File.WriteAllTextAsync(caminhoArquivo.Replace("dados.json", "categorias.json"), json);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao guardar categorias: {ex.Message}");
+            }
+        }
+
+        // Carregar categorias do JSON
+        public async Task<List<Categoria>> CarregarCategorias()
+        {
+            try
+            {
+                string caminhoCategorias = caminhoArquivo.Replace("dados.json", "categorias.json");
+                if (File.Exists(caminhoCategorias))
+                {
+                    string json = await File.ReadAllTextAsync(caminhoCategorias);
+                    return JsonSerializer.Deserialize<List<Categoria>>(json) ?? new List<Categoria>();
+                }
+                return new List<Categoria>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao carregar categorias: {ex.Message}");
+                return new List<Categoria>();
+            }
+        }
     }
 }
