@@ -14,13 +14,5 @@
     "Type": "Receita",
     "Category": "Alimenta\u00E7\u00E3o",
     "Amount": 1
-  },
-  {
-    "Number": 3,
-    "Name": "a",
-    "Date": "0001-01-01T00:00:00Z",
-    "Type": "Receita",
-    "Category": "Alimenta\u00E7\u00E3o",
-    "Amount": 1
   }
 ]

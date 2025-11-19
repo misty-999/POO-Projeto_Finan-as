@@ -6,11 +6,41 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <h2>Login</h2>
+      <form id="login-form" onsubmit="fazer_login(event)">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="senha" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+      <p style="text-align: center; margin-top: 15px;">
+        Não tens conta? <a href="#" onclick="mostrar_registar()" style="color: #27ae60; cursor: pointer;">Regista-te</a>
+      </p>
+    </div>
+  </div>
+
+  <div id="registar-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2>Registar</h2>
+      <form id="registar-form" onsubmit="fazer_registar(event)">
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="email" id="email-registar" placeholder="Email" required>
+        <input type="password" id="senha-registar" placeholder="Senha" required>
+        <input type="password" id="senha-confirmacao" placeholder="Confirmar Senha" required>
+        <button type="submit">Registar</button>
+      </form>
+      <p style="text-align: center; margin-top: 15px;">
+        Já tens conta? <a href="#" onclick="mostrar_login()" style="color: #27ae60; cursor: pointer;">Login</a>
+      </p>
+    </div>
+  </div>
+
   <header>
     <h1>Gestão de Finanças Pessoais</h1>
   </header>
 
-  <main>
+  <main id="conteudo-principal" style="display: none;">
     <section id="add-transaction">
       <h2>Adicionar Transação</h2>
       <form id="transaction-form" onsubmit="adicionar(event)">
@@ -58,6 +88,7 @@
       <p><strong>Saldo Atual:</strong> <span id="saldo">0</span> €</p>
     </section>
   </main>
+
 
   <script src="js/script.js"></script>
 </body>

@@ -7,15 +7,40 @@ app.UseStaticFiles();
 
 var persistencia = new Persistencia();
 var transacoes = new List<Transacao>();
+var utilizadores = new List<Utilizador>();
 
-// Carregar transações de forma síncrona
-var task = persistencia.CarregarTransacoes();
-task.Wait();
-transacoes.AddRange(task.Result);
+// Carregar dados de forma síncrona
+var taskTransacoes = persistencia.CarregarTransacoes();
+taskTransacoes.Wait();
+transacoes.AddRange(taskTransacoes.Result);
+
+var taskUtilizadores = persistencia.CarregarUtilizadores();
+taskUtilizadores.Wait();
+utilizadores.AddRange(taskUtilizadores.Result);
 
 app.MapGet("/", context =>
 {
     return context.Response.SendFileAsync(Path.Combine(app.Environment.WebRootPath, "index.html"));
+});
+
+app.MapPost("/registar", async (Utilizador novo) =>
+{
+    if (utilizadores.Any(u => u.Email == novo.Email))
+        return Results.BadRequest("Email já existe");
+    
+    novo.Id = utilizadores.Count + 1;
+    utilizadores.Add(novo);
+    await persistencia.GuardarUtilizadores(utilizadores);
+    return Results.Ok(novo);
+});
+
+app.MapPost("/login", (LoginRequest request) =>
+{
+    var user = utilizadores.FirstOrDefault(u => u.Email == request.Email && u.Senha == request.Senha);
+    if (user == null)
+        return Results.Unauthorized();
+    
+    return Results.Ok(new { id = user.Id, nome = user.Nome, email = user.Email });
 });
 
 app.MapGet("/transacoes", () =>
@@ -44,4 +69,8 @@ app.MapDelete("/transacoes/{number}", async (int number) =>
 
 app.Run();
 
-
+public class LoginRequest
+{
+    public string Email { get; set; } = string.Empty;
+    public string Senha { get; set; } = string.Empty;
+}

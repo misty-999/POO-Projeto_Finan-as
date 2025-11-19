@@ -1,4 +1,91 @@
 var transacoes = [];
+var usuarioLogado = false;
+
+function mostrar_login() {
+    document.getElementById('login-modal').style.display = 'flex';
+    document.getElementById('registar-modal').style.display = 'none';
+}
+
+function mostrar_registar() {
+    document.getElementById('login-modal').style.display = 'none';
+    document.getElementById('registar-modal').style.display = 'flex';
+}
+
+function fazer_login(evento) {
+    evento.preventDefault();
+    
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('senha').value;
+    
+    var credenciais = {
+        email: email,
+        senha: senha
+    };
+    
+    fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(credenciais)
+    })
+    .then(function(resposta) {
+        if (resposta.ok) {
+            return resposta.json();
+        } else {
+            throw new Error('Email ou senha incorretos!');
+        }
+    })
+    .then(function(dados) {
+        usuarioLogado = true;
+        document.getElementById('login-modal').style.display = 'none';
+        document.getElementById('conteudo-principal').style.display = 'block';
+        document.getElementById('login-form').reset();
+        carregar();
+    })
+    .catch(function(erro) {
+        alert('Erro: ' + erro.message);
+    });
+}
+
+function fazer_registar(evento) {
+    evento.preventDefault();
+    
+    var nome = document.getElementById('nome').value;
+    var email = document.getElementById('email-registar').value;
+    var senha = document.getElementById('senha-registar').value;
+    var confirmacao = document.getElementById('senha-confirmacao').value;
+    
+    if (senha !== confirmacao) {
+        alert('As senhas não correspondem!');
+        return;
+    }
+    
+    var utilizador = {
+        nome: nome,
+        email: email,
+        senha: senha,
+        perfil: 'comum'
+    };
+    
+    fetch('/registar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(utilizador)
+    })
+    .then(function(resposta) {
+        if (resposta.ok) {
+            alert('Registo realizado com sucesso! Faz login agora.');
+            document.getElementById('registar-form').reset();
+            mostrar_login();
+        } else {
+            return resposta.text().then(function(texto) {
+                alert('Erro: ' + texto);
+            });
+        }
+    })
+    .catch(function(erro) {
+        alert('Erro ao registar: ' + erro);
+    });
+}
 
 function carregar() {
     console.log('A carregar transações...');
