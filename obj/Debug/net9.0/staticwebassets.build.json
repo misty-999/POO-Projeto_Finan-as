@@ -1,0 +1,2165 @@
+{
+  "Version": 1,
+  "Hash": "dx1eDI4ScU/qbUMn8gHAzVWGBtyvYarUDUDlduzSIP4=",
+  "Source": "ProjetoFinancas",
+  "BasePath": "_content/ProjetoFinancas",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ProjetoFinancas\\wwwroot",
+      "Source": "ProjetoFinancas",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\75exct25c2-vcj8swonh7.gz",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "js/script#[.{fingerprint=vcj8swonh7}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\js\\script.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "lzspwz69ex",
+      "Integrity": "/3R47zt7dPvnSHOcpBKMwrQT7b0JhYg8vyBL1dE/R/Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\js\\script.js"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\8wd54xrkci-o2itun3jjz.gz",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "data/transacoes#[.{fingerprint=o2itun3jjz}]?.json.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\transacoes.json",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "2emi3o8qlp",
+      "Integrity": "JntiPmxzVOrupDByoVT9Pg+aW80fbFktV6JB+gudoQ8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\transacoes.json"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\cduv8ouxy4-nphci7nwfo.gz",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "data/utilizadores#[.{fingerprint=nphci7nwfo}]?.json.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\utilizadores.json",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "2pzbpyimvj",
+      "Integrity": "ilWpS5ohRGGYjpJ+gShlvAfXxuvrKP0DyM92+XWwadA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\utilizadores.json"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\e2ftva2r19-0c3fpz2yxb.gz",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "index#[.{fingerprint=0c3fpz2yxb}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\index.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "auowg2xsv7",
+      "Integrity": "wq3RWg3HZM5E79gyeCPJ0crJenDXfOWippj9tMewzG8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\gc2wd4pfr0-a1s8r58ndn.gz",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "data/categorias#[.{fingerprint=a1s8r58ndn}]?.json.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\categorias.json",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "lqwl5sovdu",
+      "Integrity": "/e1BCvioUOl6ILP6VVIFRsR6M0G9yuPDXwsjPWorNb8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\categorias.json"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\m6c8f7ydr8-w24f3t0ltl.gz",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "css/styles#[.{fingerprint=w24f3t0ltl}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\css\\styles.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "eao7fnxr35",
+      "Integrity": "tnFDuk07HlUowM7MkfhUnPRZ421zVdo5eXKkkjW/c8o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\css\\styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\css\\styles.css",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "css/styles#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w24f3t0ltl",
+      "Integrity": "aHlIA9bUWRxcEY6LrmxBEJ6r75FUQxR7xD6uDKYs6MQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\categorias.json",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "data/categorias#[.{fingerprint}]?.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a1s8r58ndn",
+      "Integrity": "ElH3hDI/hWrumf85N0gCDDa7mrw3zYev+QqW5dxic0c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\data\\categorias.json"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\transacoes.json",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "data/transacoes#[.{fingerprint}]?.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "o2itun3jjz",
+      "Integrity": "QHXqBV5bMCetxnPRUSmm7M1bknVNQrMhVPjKi8K/VtA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\data\\transacoes.json"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\utilizadores.json",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "data/utilizadores#[.{fingerprint}]?.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "nphci7nwfo",
+      "Integrity": "qyKSrd/rULkqmQfoymaWg9574akNrT4e1oDntuh01h8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\data\\utilizadores.json"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\images\\favicon.jpg",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "images/favicon#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "aiwcpxiejf",
+      "Integrity": "kqzuiufTp/dEpsbVOwM7zAdMCOAFMIJ7Rvw5P7Yr26s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\favicon.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\index.html",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0c3fpz2yxb",
+      "Integrity": "YHyweNQyRTj6NwU+/60tFIY0q/SGj9l1XFEAYHrQxT4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\js\\script.js",
+      "SourceId": "ProjetoFinancas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\",
+      "BasePath": "_content/ProjetoFinancas",
+      "RelativePath": "js/script#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vcj8swonh7",
+      "Integrity": "AZBZHIMcijPXRqvh0bGyq/QJ/YR/FZ9wNBZpYPHR+Hw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\script.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/styles.css",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\m6c8f7ydr8-w24f3t0ltl.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001216545012"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "821"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tnFDuk07HlUowM7MkfhUnPRZ421zVdo5eXKkkjW/c8o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"aHlIA9bUWRxcEY6LrmxBEJ6r75FUQxR7xD6uDKYs6MQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aHlIA9bUWRxcEY6LrmxBEJ6r75FUQxR7xD6uDKYs6MQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/styles.css",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\css\\styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3095"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aHlIA9bUWRxcEY6LrmxBEJ6r75FUQxR7xD6uDKYs6MQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aHlIA9bUWRxcEY6LrmxBEJ6r75FUQxR7xD6uDKYs6MQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/styles.css.gz",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\m6c8f7ydr8-w24f3t0ltl.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "821"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tnFDuk07HlUowM7MkfhUnPRZ421zVdo5eXKkkjW/c8o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tnFDuk07HlUowM7MkfhUnPRZ421zVdo5eXKkkjW/c8o="
+        }
+      ]
+    },
+    {
+      "Route": "css/styles.w24f3t0ltl.css",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\m6c8f7ydr8-w24f3t0ltl.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001216545012"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "821"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tnFDuk07HlUowM7MkfhUnPRZ421zVdo5eXKkkjW/c8o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"aHlIA9bUWRxcEY6LrmxBEJ6r75FUQxR7xD6uDKYs6MQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w24f3t0ltl"
+        },
+        {
+          "Name": "label",
+          "Value": "css/styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-aHlIA9bUWRxcEY6LrmxBEJ6r75FUQxR7xD6uDKYs6MQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/styles.w24f3t0ltl.css",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\css\\styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3095"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aHlIA9bUWRxcEY6LrmxBEJ6r75FUQxR7xD6uDKYs6MQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w24f3t0ltl"
+        },
+        {
+          "Name": "label",
+          "Value": "css/styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-aHlIA9bUWRxcEY6LrmxBEJ6r75FUQxR7xD6uDKYs6MQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/styles.w24f3t0ltl.css.gz",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\m6c8f7ydr8-w24f3t0ltl.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "821"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tnFDuk07HlUowM7MkfhUnPRZ421zVdo5eXKkkjW/c8o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w24f3t0ltl"
+        },
+        {
+          "Name": "label",
+          "Value": "css/styles.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tnFDuk07HlUowM7MkfhUnPRZ421zVdo5eXKkkjW/c8o="
+        }
+      ]
+    },
+    {
+      "Route": "data/categorias.a1s8r58ndn.json",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\gc2wd4pfr0-a1s8r58ndn.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.005617977528"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "177"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/e1BCvioUOl6ILP6VVIFRsR6M0G9yuPDXwsjPWorNb8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ElH3hDI/hWrumf85N0gCDDa7mrw3zYev+QqW5dxic0c=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a1s8r58ndn"
+        },
+        {
+          "Name": "label",
+          "Value": "data/categorias.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ElH3hDI/hWrumf85N0gCDDa7mrw3zYev+QqW5dxic0c="
+        }
+      ]
+    },
+    {
+      "Route": "data/categorias.a1s8r58ndn.json",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\categorias.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "489"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ElH3hDI/hWrumf85N0gCDDa7mrw3zYev+QqW5dxic0c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a1s8r58ndn"
+        },
+        {
+          "Name": "label",
+          "Value": "data/categorias.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ElH3hDI/hWrumf85N0gCDDa7mrw3zYev+QqW5dxic0c="
+        }
+      ]
+    },
+    {
+      "Route": "data/categorias.a1s8r58ndn.json.gz",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\gc2wd4pfr0-a1s8r58ndn.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "177"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/e1BCvioUOl6ILP6VVIFRsR6M0G9yuPDXwsjPWorNb8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a1s8r58ndn"
+        },
+        {
+          "Name": "label",
+          "Value": "data/categorias.json.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/e1BCvioUOl6ILP6VVIFRsR6M0G9yuPDXwsjPWorNb8="
+        }
+      ]
+    },
+    {
+      "Route": "data/categorias.json",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\gc2wd4pfr0-a1s8r58ndn.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.005617977528"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "177"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/e1BCvioUOl6ILP6VVIFRsR6M0G9yuPDXwsjPWorNb8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ElH3hDI/hWrumf85N0gCDDa7mrw3zYev+QqW5dxic0c=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ElH3hDI/hWrumf85N0gCDDa7mrw3zYev+QqW5dxic0c="
+        }
+      ]
+    },
+    {
+      "Route": "data/categorias.json",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\categorias.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "489"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ElH3hDI/hWrumf85N0gCDDa7mrw3zYev+QqW5dxic0c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ElH3hDI/hWrumf85N0gCDDa7mrw3zYev+QqW5dxic0c="
+        }
+      ]
+    },
+    {
+      "Route": "data/categorias.json.gz",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\gc2wd4pfr0-a1s8r58ndn.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "177"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/e1BCvioUOl6ILP6VVIFRsR6M0G9yuPDXwsjPWorNb8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/e1BCvioUOl6ILP6VVIFRsR6M0G9yuPDXwsjPWorNb8="
+        }
+      ]
+    },
+    {
+      "Route": "data/transacoes.json",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\8wd54xrkci-o2itun3jjz.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.005649717514"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "176"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JntiPmxzVOrupDByoVT9Pg+aW80fbFktV6JB+gudoQ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:36:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"QHXqBV5bMCetxnPRUSmm7M1bknVNQrMhVPjKi8K/VtA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QHXqBV5bMCetxnPRUSmm7M1bknVNQrMhVPjKi8K/VtA="
+        }
+      ]
+    },
+    {
+      "Route": "data/transacoes.json",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\transacoes.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "333"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QHXqBV5bMCetxnPRUSmm7M1bknVNQrMhVPjKi8K/VtA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:36:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QHXqBV5bMCetxnPRUSmm7M1bknVNQrMhVPjKi8K/VtA="
+        }
+      ]
+    },
+    {
+      "Route": "data/transacoes.json.gz",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\8wd54xrkci-o2itun3jjz.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "176"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JntiPmxzVOrupDByoVT9Pg+aW80fbFktV6JB+gudoQ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:36:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JntiPmxzVOrupDByoVT9Pg+aW80fbFktV6JB+gudoQ8="
+        }
+      ]
+    },
+    {
+      "Route": "data/transacoes.o2itun3jjz.json",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\8wd54xrkci-o2itun3jjz.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.005649717514"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "176"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JntiPmxzVOrupDByoVT9Pg+aW80fbFktV6JB+gudoQ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:36:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"QHXqBV5bMCetxnPRUSmm7M1bknVNQrMhVPjKi8K/VtA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o2itun3jjz"
+        },
+        {
+          "Name": "label",
+          "Value": "data/transacoes.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QHXqBV5bMCetxnPRUSmm7M1bknVNQrMhVPjKi8K/VtA="
+        }
+      ]
+    },
+    {
+      "Route": "data/transacoes.o2itun3jjz.json",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\transacoes.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "333"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QHXqBV5bMCetxnPRUSmm7M1bknVNQrMhVPjKi8K/VtA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:36:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o2itun3jjz"
+        },
+        {
+          "Name": "label",
+          "Value": "data/transacoes.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QHXqBV5bMCetxnPRUSmm7M1bknVNQrMhVPjKi8K/VtA="
+        }
+      ]
+    },
+    {
+      "Route": "data/transacoes.o2itun3jjz.json.gz",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\8wd54xrkci-o2itun3jjz.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "176"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JntiPmxzVOrupDByoVT9Pg+aW80fbFktV6JB+gudoQ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:36:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o2itun3jjz"
+        },
+        {
+          "Name": "label",
+          "Value": "data/transacoes.json.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JntiPmxzVOrupDByoVT9Pg+aW80fbFktV6JB+gudoQ8="
+        }
+      ]
+    },
+    {
+      "Route": "data/utilizadores.json",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\cduv8ouxy4-nphci7nwfo.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.006849315068"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "145"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ilWpS5ohRGGYjpJ+gShlvAfXxuvrKP0DyM92+XWwadA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"qyKSrd/rULkqmQfoymaWg9574akNrT4e1oDntuh01h8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qyKSrd/rULkqmQfoymaWg9574akNrT4e1oDntuh01h8="
+        }
+      ]
+    },
+    {
+      "Route": "data/utilizadores.json",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\utilizadores.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "492"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qyKSrd/rULkqmQfoymaWg9574akNrT4e1oDntuh01h8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qyKSrd/rULkqmQfoymaWg9574akNrT4e1oDntuh01h8="
+        }
+      ]
+    },
+    {
+      "Route": "data/utilizadores.json.gz",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\cduv8ouxy4-nphci7nwfo.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "145"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ilWpS5ohRGGYjpJ+gShlvAfXxuvrKP0DyM92+XWwadA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ilWpS5ohRGGYjpJ+gShlvAfXxuvrKP0DyM92+XWwadA="
+        }
+      ]
+    },
+    {
+      "Route": "data/utilizadores.nphci7nwfo.json",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\cduv8ouxy4-nphci7nwfo.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.006849315068"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "145"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ilWpS5ohRGGYjpJ+gShlvAfXxuvrKP0DyM92+XWwadA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"qyKSrd/rULkqmQfoymaWg9574akNrT4e1oDntuh01h8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nphci7nwfo"
+        },
+        {
+          "Name": "label",
+          "Value": "data/utilizadores.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qyKSrd/rULkqmQfoymaWg9574akNrT4e1oDntuh01h8="
+        }
+      ]
+    },
+    {
+      "Route": "data/utilizadores.nphci7nwfo.json",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\utilizadores.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "492"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qyKSrd/rULkqmQfoymaWg9574akNrT4e1oDntuh01h8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nphci7nwfo"
+        },
+        {
+          "Name": "label",
+          "Value": "data/utilizadores.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qyKSrd/rULkqmQfoymaWg9574akNrT4e1oDntuh01h8="
+        }
+      ]
+    },
+    {
+      "Route": "data/utilizadores.nphci7nwfo.json.gz",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\cduv8ouxy4-nphci7nwfo.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "145"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ilWpS5ohRGGYjpJ+gShlvAfXxuvrKP0DyM92+XWwadA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nphci7nwfo"
+        },
+        {
+          "Name": "label",
+          "Value": "data/utilizadores.json.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ilWpS5ohRGGYjpJ+gShlvAfXxuvrKP0DyM92+XWwadA="
+        }
+      ]
+    },
+    {
+      "Route": "images/favicon.aiwcpxiejf.jpg",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\images\\favicon.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27197"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kqzuiufTp/dEpsbVOwM7zAdMCOAFMIJ7Rvw5P7Yr26s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "aiwcpxiejf"
+        },
+        {
+          "Name": "label",
+          "Value": "images/favicon.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kqzuiufTp/dEpsbVOwM7zAdMCOAFMIJ7Rvw5P7Yr26s="
+        }
+      ]
+    },
+    {
+      "Route": "images/favicon.jpg",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\images\\favicon.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27197"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kqzuiufTp/dEpsbVOwM7zAdMCOAFMIJ7Rvw5P7Yr26s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 17:55:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kqzuiufTp/dEpsbVOwM7zAdMCOAFMIJ7Rvw5P7Yr26s="
+        }
+      ]
+    },
+    {
+      "Route": "index.0c3fpz2yxb.html",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\e2ftva2r19-0c3fpz2yxb.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000862068966"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1159"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wq3RWg3HZM5E79gyeCPJ0crJenDXfOWippj9tMewzG8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"YHyweNQyRTj6NwU+/60tFIY0q/SGj9l1XFEAYHrQxT4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0c3fpz2yxb"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YHyweNQyRTj6NwU+/60tFIY0q/SGj9l1XFEAYHrQxT4="
+        }
+      ]
+    },
+    {
+      "Route": "index.0c3fpz2yxb.html",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3891"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YHyweNQyRTj6NwU+/60tFIY0q/SGj9l1XFEAYHrQxT4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0c3fpz2yxb"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YHyweNQyRTj6NwU+/60tFIY0q/SGj9l1XFEAYHrQxT4="
+        }
+      ]
+    },
+    {
+      "Route": "index.0c3fpz2yxb.html.gz",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\e2ftva2r19-0c3fpz2yxb.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1159"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wq3RWg3HZM5E79gyeCPJ0crJenDXfOWippj9tMewzG8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0c3fpz2yxb"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wq3RWg3HZM5E79gyeCPJ0crJenDXfOWippj9tMewzG8="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\e2ftva2r19-0c3fpz2yxb.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000862068966"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1159"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wq3RWg3HZM5E79gyeCPJ0crJenDXfOWippj9tMewzG8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"YHyweNQyRTj6NwU+/60tFIY0q/SGj9l1XFEAYHrQxT4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YHyweNQyRTj6NwU+/60tFIY0q/SGj9l1XFEAYHrQxT4="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3891"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YHyweNQyRTj6NwU+/60tFIY0q/SGj9l1XFEAYHrQxT4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YHyweNQyRTj6NwU+/60tFIY0q/SGj9l1XFEAYHrQxT4="
+        }
+      ]
+    },
+    {
+      "Route": "index.html.gz",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\e2ftva2r19-0c3fpz2yxb.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1159"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wq3RWg3HZM5E79gyeCPJ0crJenDXfOWippj9tMewzG8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wq3RWg3HZM5E79gyeCPJ0crJenDXfOWippj9tMewzG8="
+        }
+      ]
+    },
+    {
+      "Route": "js/script.js",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\75exct25c2-vcj8swonh7.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000404530744"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2471"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/3R47zt7dPvnSHOcpBKMwrQT7b0JhYg8vyBL1dE/R/Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"AZBZHIMcijPXRqvh0bGyq/QJ/YR/FZ9wNBZpYPHR+Hw=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AZBZHIMcijPXRqvh0bGyq/QJ/YR/FZ9wNBZpYPHR+Hw="
+        }
+      ]
+    },
+    {
+      "Route": "js/script.js",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\js\\script.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9351"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AZBZHIMcijPXRqvh0bGyq/QJ/YR/FZ9wNBZpYPHR+Hw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AZBZHIMcijPXRqvh0bGyq/QJ/YR/FZ9wNBZpYPHR+Hw="
+        }
+      ]
+    },
+    {
+      "Route": "js/script.js.gz",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\75exct25c2-vcj8swonh7.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2471"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/3R47zt7dPvnSHOcpBKMwrQT7b0JhYg8vyBL1dE/R/Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/3R47zt7dPvnSHOcpBKMwrQT7b0JhYg8vyBL1dE/R/Q="
+        }
+      ]
+    },
+    {
+      "Route": "js/script.vcj8swonh7.js",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\75exct25c2-vcj8swonh7.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000404530744"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2471"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/3R47zt7dPvnSHOcpBKMwrQT7b0JhYg8vyBL1dE/R/Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"AZBZHIMcijPXRqvh0bGyq/QJ/YR/FZ9wNBZpYPHR+Hw=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vcj8swonh7"
+        },
+        {
+          "Name": "label",
+          "Value": "js/script.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AZBZHIMcijPXRqvh0bGyq/QJ/YR/FZ9wNBZpYPHR+Hw="
+        }
+      ]
+    },
+    {
+      "Route": "js/script.vcj8swonh7.js",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\js\\script.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9351"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AZBZHIMcijPXRqvh0bGyq/QJ/YR/FZ9wNBZpYPHR+Hw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vcj8swonh7"
+        },
+        {
+          "Name": "label",
+          "Value": "js/script.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AZBZHIMcijPXRqvh0bGyq/QJ/YR/FZ9wNBZpYPHR+Hw="
+        }
+      ]
+    },
+    {
+      "Route": "js/script.vcj8swonh7.js.gz",
+      "AssetFile": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\obj\\Debug\\net9.0\\compressed\\75exct25c2-vcj8swonh7.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2471"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/3R47zt7dPvnSHOcpBKMwrQT7b0JhYg8vyBL1dE/R/Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 19:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vcj8swonh7"
+        },
+        {
+          "Name": "label",
+          "Value": "js/script.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/3R47zt7dPvnSHOcpBKMwrQT7b0JhYg8vyBL1dE/R/Q="
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "Id": 1,
+    "Nome": "Alimenta\u00E7\u00E3o",
+    "Descricao": "Despesas com alimenta\u00E7\u00E3o"
+  },
+  {
+    "Id": 2,
+    "Nome": "Transporte",
+    "Descricao": "Despesas com transporte"
+  },
+  {
+    "Id": 3,
+    "Nome": "Moradia",
+    "Descricao": "Despesas com moradia"
+  },
+  {
+    "Id": 4,
+    "Nome": "Lazer",
+    "Descricao": "Despesas com lazer"
+  },
+  {
+    "Id": 5,
+    "Nome": "Sa\u00FAde",
+    "Descricao": "Despesas com sa\u00FAde"
+  }
+]

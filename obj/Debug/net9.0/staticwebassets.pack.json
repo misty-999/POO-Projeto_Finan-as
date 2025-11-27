@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\categorias.json",
+      "PackagePath": "staticwebassets\\data\\categorias.json"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\transacoes.json",
+      "PackagePath": "staticwebassets\\data\\transacoes.json"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\data\\utilizadores.json",
+      "PackagePath": "staticwebassets\\data\\utilizadores.json"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\images\\favicon.jpg",
+      "PackagePath": "staticwebassets\\images\\favicon.jpg"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Downloads\\POO-Projeto_Finan-as\\POO-Projeto_Finan-as\\ProjetoFinal\\ProjetoFinancas\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.ProjetoFinancas.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.ProjetoFinancas.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.ProjetoFinancas.props",
+      "PackagePath": "build\\ProjetoFinancas.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.ProjetoFinancas.props",
+      "PackagePath": "buildMultiTargeting\\ProjetoFinancas.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.ProjetoFinancas.props",
+      "PackagePath": "buildTransitive\\ProjetoFinancas.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
