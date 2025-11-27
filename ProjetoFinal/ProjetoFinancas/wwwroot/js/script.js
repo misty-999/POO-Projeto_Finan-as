@@ -5,6 +5,7 @@
 var transacoes = [];
 var usuarioLogado = false;
 var usuarioAtual = null;
+var editingNumber = null;
 
 // Mostrar o modal de login
 function mostrar_login() {
@@ -131,10 +132,23 @@ function adicionar(evento) {
         amount: parseFloat(valor)
     };
     
-    // Envia a transação para o servidor que a grava em transacoes.json
-    fetch('/transacoes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(transacao) })
-        .then(function(resposta) { document.querySelector('form').reset(); carregar(); })
-        .catch(function(erro) { console.log('Erro ao adicionar:', erro); });
+    // Validação simples no frontend: apenas valores positivos
+    if (isNaN(transacao.amount) || transacao.amount <= 0) {
+        alert('O valor da transação deve ser um número positivo maior que 0.');
+        return;
+    }
+    
+    // Se estamos em modo de edição, usar PUT para atualizar
+    if (editingNumber !== null) {
+        fetch('/transacoes/' + editingNumber, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(transacao) })
+            .then(function(resposta) { document.querySelector('form').reset(); cancelarEdicao(); carregar(); })
+            .catch(function(erro) { console.log('Erro ao editar:', erro); });
+    } else {
+        // Envia a transação para o servidor que a grava em transacoes.json
+        fetch('/transacoes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(transacao) })
+            .then(function(resposta) { document.querySelector('form').reset(); carregar(); })
+            .catch(function(erro) { console.log('Erro ao adicionar:', erro); });
+    }
 }
 
 function mostrar() {
@@ -154,7 +168,8 @@ function mostrar() {
         html += '<td>' + d + '</td>';
         html += '<td>' + t.type + '</td>';
         html += '<td>' + t.category + '</td>';
-        html += '<td><button class="delete-btn" onclick="deletar(' + t.number + ')">Eliminar</button></td>';
+        html += '<td><button class="edit-btn" onclick="iniciarEdicao(' + t.number + ')">Editar</button> ';
+        html += '<button class="delete-btn" onclick="deletar(' + t.number + ')">Eliminar</button></td>';
         html += '</tr>';
 
         tabela.innerHTML = tabela.innerHTML + html;
@@ -172,6 +187,38 @@ function deletar(numero) {
                 carregar();
             });
     }
+}
+
+function iniciarEdicao(numero) {
+    var t = transacoes.find(function(x) { return x.number === numero; });
+    if (!t) { alert('Transação não encontrada'); return; }
+
+    document.getElementById('descricao').value = t.name;
+    document.getElementById('valor').value = t.amount;
+    // Formatar data para campo date (YYYY-MM-DD)
+    try {
+        var iso = new Date(t.date).toISOString().slice(0,10);
+        document.getElementById('data').value = iso;
+    } catch (e) {
+        document.getElementById('data').value = '';
+    }
+    document.getElementById('tipo').value = t.type;
+    document.getElementById('categoria').value = t.category;
+
+    editingNumber = numero;
+    document.getElementById('submit-btn').textContent = 'Salvar';
+    document.getElementById('cancelar-edicao').style.display = 'inline-block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function cancelarEdicao() {
+    editingNumber = null;
+    var form = document.getElementById('transaction-form');
+    if (form) form.reset();
+    var btn = document.getElementById('submit-btn');
+    if (btn) btn.textContent = 'Adicionar';
+    var cancelBtn = document.getElementById('cancelar-edicao');
+    if (cancelBtn) cancelBtn.style.display = 'none';
 }
 
 function calcular() {

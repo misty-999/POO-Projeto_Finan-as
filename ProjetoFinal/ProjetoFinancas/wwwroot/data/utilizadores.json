@@ -22,5 +22,17 @@
     "Username": "Miguel1",
     "Password": "123",
     "Perfil": "comum"
+  },
+  {
+    "Id": 5,
+    "Username": "Admin",
+    "Password": "admin",
+    "Perfil": "comum"
+  },
+  {
+    "Id": 6,
+    "Username": "teste1",
+    "Password": "12345",
+    "Perfil": "comum"
   }
 ]

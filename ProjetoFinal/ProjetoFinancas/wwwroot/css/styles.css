@@ -62,12 +62,19 @@ table th {
   background: #ecf0f1;
 }
 
+
+
+
+
+
+
 .actions button {
   margin: 2px;
-  padding: 5px 8px;
+  padding: 5px 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 13px;
 }
 
 .actions .edit {
@@ -75,10 +82,42 @@ table th {
   color: white;
 }
 
+.actions .edit:hover {
+  background: #e67e22;
+}
+
 .actions .delete {
   background: #e74c3c;
   color: white;
 }
+
+.actions .delete:hover {
+  background: #c0392b;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+
+
+
+
+
+
+
+
+
 
 .modal {
   display: flex;
@@ -157,4 +196,31 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+.edit-btn {
+  background: #f39c12;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.edit-btn:hover {
+  background: #e67e22;
+}
+
+#cancelar-edicao {
+  background: #7f8c8d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#cancelar-edicao:hover {
+  background: #707b7c;
 }

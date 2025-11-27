@@ -1,18 +1,18 @@
 [
   {
     "Number": 1,
-    "Name": "a",
-    "Date": "2001-01-01T00:00:00Z",
+    "Name": "teste",
+    "Date": "2025-10-27T00:00:00",
     "Type": "Receita",
-    "Category": "Alimenta\u00E7\u00E3o",
-    "Amount": 1
+    "Category": "Transporte",
+    "Amount": 2
   },
   {
     "Number": 2,
-    "Name": "a",
-    "Date": "0001-01-01T00:00:00Z",
+    "Name": "22",
+    "Date": "0022-02-22T00:00:00",
     "Type": "Receita",
     "Category": "Alimenta\u00E7\u00E3o",
-    "Amount": 1
+    "Amount": -0.03
   }
 ]
