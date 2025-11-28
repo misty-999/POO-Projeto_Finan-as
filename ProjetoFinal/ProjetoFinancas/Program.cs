@@ -41,6 +41,7 @@ app.MapPost("/registar", async (Utilizador novo) =>
     utilizadores.Add(novo);
     await persistencia.GuardarUtilizadores(utilizadores);
     return Results.Ok(novo);
+
 });
 
 // Endpoint: login
