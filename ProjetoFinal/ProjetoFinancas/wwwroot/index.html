@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestão de Finanças Pessoais</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/favicon.jpg" type="image/jpeg">
+</head>
+<body>
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <h2>Login</h2>
+      <form id="login-form" onsubmit="fazer_login(event)">
+        <input type="text" id="username" placeholder="Utilizador" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+      <p style="text-align: center; margin-top: 15px;">
+        Não tens conta? <a href="#" onclick="mostrar_registar()" style="color: #27ae60; cursor: pointer;">Regista-te</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="registar-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2>Registar</h2>
+      <form id="registar-form" onsubmit="fazer_registar(event)">
+        <input type="text" id="username-registar" placeholder="Utilizador" required>
+        <input type="password" id="password-registar" placeholder="Senha" required>
+        <input type="password" id="password-confirmacao" placeholder="Confirmar Senha" required>
+        <button type="submit">Registar</button>
+      </form>
+      <p style="text-align: center; margin-top: 15px;">
+        Já tens conta? <a href="#" onclick="mostrar_login()" style="color: #27ae60; cursor: pointer;">Login</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <h1>Gestão de Finanças Pessoais</h1>
+      <div id="user-info" style="display: none;">
+        <span id="user-name"></span>
+        <button id="logout-btn" onclick="fazer_logout()">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="conteudo-principal" style="display: none;">
+    <!-- Add Transaction -->
+    <section id="add-transaction">
+      <h2>Adicionar Transação</h2>
+      <form id="transaction-form" onsubmit="adicionar(event)">
+        <input type="text" id="descricao" placeholder="Descrição" required>
+        <input type="number" id="valor" placeholder="Valor (€)" step="0.01" required>
+        <input type="date" id="data" required>
+        <select id="tipo" required>
+          <option value="">-- Tipo --</option>
+          <option value="Receita">Receita</option>
+          <option value="Despesa">Despesa</option>
+        </select>
+        <select id="categoria" required>
+          <option value="">-- Categoria --</option>
+          <option value="Alimentação">Alimentação</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Moradia">Moradia</option>
+          <option value="Lazer">Lazer</option>
+          <option value="Saúde">Saúde</option>
+        </select>
+        <button type="submit">Adicionar</button>
+      </form>
+    </section>
+
+    <!-- Transactions Table -->
+    <section id="transactions">
+      <h2>Transações</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Valor (€)</th>
+            <th>Data</th>
+            <th>Tipo</th>
+            <th>Categoria</th>
+                        <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaTransacoes"></tbody>
+      </table>
+    </section>
+
+    <!-- Edit Transaction Modal -->
+    <div id="edit-modal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <h2>Editar Transação</h2>
+        <form id="edit-form" onsubmit="guardarEdicao(event)">
+          <input type="hidden" id="edit-id">
+          <input type="text" id="edit-descricao" placeholder="Descrição" required>
+          <input type="number" id="edit-valor" placeholder="Valor (€)" step="0.01" required>
+          <input type="date" id="edit-data" required>
+          <select id="edit-tipo" required>
+            <option value="">-- Tipo --</option>
+            <option value="Receita">Receita</option>
+            <option value="Despesa">Despesa</option>
+          </select>
+          <select id="edit-categoria" required>
+            <option value="">-- Categoria --</option>
+            <option value="Alimentação">Alimentação</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Moradia">Moradia</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Saúde">Saúde</option>
+          </select>
+          <div style="display: flex; gap: 10px; margin-top: 10px;">
+            <button type="submit" style="flex: 1;">Guardar</button>
+            <button type="button" onclick="fecharEdicao()" style="flex: 1; background: #95a5a6;">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+
+    <!-- Report -->
+    <section id="report">
+      <h2>Relatórios</h2>
+      <p><strong>Total Receitas:</strong> <span id="totalReceitas">0</span> €</p>
+      <p><strong>Total Despesas:</strong> <span id="totalDespesas">0</span> €</p>
+      <p><strong>Saldo Atual:</strong> <span id="saldo">0</span> €</p>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

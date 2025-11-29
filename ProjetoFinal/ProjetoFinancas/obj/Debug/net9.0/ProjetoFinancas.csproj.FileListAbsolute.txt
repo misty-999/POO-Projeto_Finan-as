@@ -1,0 +1,64 @@
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\bin\Debug\net9.0\appsettings.Development.json
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\bin\Debug\net9.0\appsettings.json
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.staticwebassets.endpoints.json
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.exe
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.deps.json
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.runtimeconfig.json
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.dll
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.pdb
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.AssemblyInfoInputs.cache
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.AssemblyInfo.cs
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.csproj.CoreCompileInputs.cache
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.MvcApplicationPartsAssemblyInfo.cache
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\scopedcss\bundle\ProjetoFinancas.styles.css
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\staticwebassets.build.json
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\staticwebassets.development.json
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\staticwebassets\msbuild.ProjetoFinancas.Microsoft.AspNetCore.StaticWebAssets.props
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\staticwebassets\msbuild.ProjetoFinancas.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\staticwebassets\msbuild.build.ProjetoFinancas.props
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.ProjetoFinancas.props
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.ProjetoFinancas.props
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\staticwebassets.pack.json
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.dll
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\refint\ProjetoFinancas.dll
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.pdb
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.genruntimeconfig.cache
+c:\Users\Miguel\Desktop\POO\Ficha2- Projeto Finanças\ProjetoFinancas\obj\Debug\net9.0\ref\ProjetoFinancas.dll
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\bin\Debug\net9.0\appsettings.Development.json
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\bin\Debug\net9.0\appsettings.json
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.staticwebassets.endpoints.json
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.exe
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.deps.json
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.runtimeconfig.json
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.dll
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.pdb
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.AssemblyInfoInputs.cache
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.AssemblyInfo.cs
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.csproj.CoreCompileInputs.cache
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.MvcApplicationPartsAssemblyInfo.cache
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.sourcelink.json
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\scopedcss\bundle\ProjetoFinancas.styles.css
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\staticwebassets.build.json
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\staticwebassets.development.json
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\staticwebassets\msbuild.ProjetoFinancas.Microsoft.AspNetCore.StaticWebAssets.props
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\staticwebassets\msbuild.ProjetoFinancas.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\staticwebassets\msbuild.build.ProjetoFinancas.props
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.ProjetoFinancas.props
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.ProjetoFinancas.props
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\staticwebassets.pack.json
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.dll
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\refint\ProjetoFinancas.dll
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.pdb
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\ProjetoFinancas.genruntimeconfig.cache
+c:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\ref\ProjetoFinancas.dll
+C:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\bin\Debug\net9.0\ProjetoFinancas.staticwebassets.runtime.json
+C:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\compressed\gc2wd4pfr0-a1s8r58ndn.gz
+C:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\compressed\cduv8ouxy4-nphci7nwfo.gz
+C:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\compressed\m6c8f7ydr8-w24f3t0ltl.gz
+C:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\compressed\e2ftva2r19-c04gshth06.gz
+C:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\compressed\75exct25c2-51ym7xztft.gz
+C:\Users\Miguel\Desktop\POO\POO-Projeto_Finan-as\ProjetoFinal\ProjetoFinancas\obj\Debug\net9.0\compressed\8wd54xrkci-9du8pam0u7.gz
