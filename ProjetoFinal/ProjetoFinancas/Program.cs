@@ -6,10 +6,15 @@
 // Nota de seguranca: senhas sao comparadas em texto plano neste exemplo - nao usar em producao.
 using ProjetoFinancas.Classes;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 app.UseStaticFiles();
+
+// Categorias válidas permitidas
+var categoriasValidas = new List<string> { "Alimentação", "Transporte", "Moradia", "Lazer", "Saúde" };
 
 var persistencia = new Persistencia();
 var transacoes = new List<Transacao>();
@@ -60,6 +65,9 @@ app.MapPost("/login", (LoginRequest request) =>
 // Endpoint: obter todas as transacoes (em memoria)
 app.MapGet("/transacoes", () => Results.Ok(transacoes));
 
+// Endpoint: obter categorias válidas
+app.MapGet("/categorias", () => Results.Ok(categoriasValidas));
+
 // Endpoint: criar transacao
 // Recebe um objeto Transacao (name, amount, date, type, category). Atribui Number e grava.
 app.MapPost("/transacoes", async (Transacao nova) =>
@@ -67,6 +75,14 @@ app.MapPost("/transacoes", async (Transacao nova) =>
     // Validar valor positivo
     if (nova.Amount <= 0)
         return Results.BadRequest("O valor da transação deve ser positivo (> 0).");
+    
+    // Validar categoria
+    if (!categoriasValidas.Contains(nova.Category))
+        return Results.BadRequest("Categoria inválida. Categorias válidas: " + string.Join(", ", categoriasValidas));
+    
+    // Validar tipo
+    if (nova.Type != "Receita" && nova.Type != "Despesa")
+        return Results.BadRequest("Tipo inválido. Use 'Receita' ou 'Despesa'.");
 
     nova.Number = transacoes.Count + 1;
     transacoes.Add(nova);
@@ -83,6 +99,14 @@ app.MapPut("/transacoes/{number}", async (int number, Transacao atualizada) =>
     // Validar valor positivo
     if (atualizada.Amount <= 0)
         return Results.BadRequest("O valor da transação deve ser positivo (> 0).");
+    
+    // Validar categoria
+    if (!categoriasValidas.Contains(atualizada.Category))
+        return Results.BadRequest("Categoria inválida. Categorias válidas: " + string.Join(", ", categoriasValidas));
+    
+    // Validar tipo
+    if (atualizada.Type != "Receita" && atualizada.Type != "Despesa")
+        return Results.BadRequest("Tipo inválido. Use 'Receita' ou 'Despesa'.");
 
     transacaoExistente.Name = atualizada.Name;
     transacaoExistente.Date = atualizada.Date;
