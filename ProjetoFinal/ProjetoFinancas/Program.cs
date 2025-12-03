@@ -64,8 +64,9 @@ app.MapPost("/login", (LoginRequest request) =>
 
 // Endpoint: obter todas as transacoes (em memoria)
 
-// app.MapGet("/transacoes", () => Results.Ok(transacoes));
+// app.MapGet("/transacoes", () => Results.Ok(transacoes)); //deprecated
 
+// Endpoint: obter todas as transacoes do user logado (em memoria)
 app.MapGet("/transacoes", (int userId) =>
 {
     var userTransacoes = transacoes

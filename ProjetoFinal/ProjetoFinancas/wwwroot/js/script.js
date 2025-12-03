@@ -99,6 +99,8 @@ function fazer_registar(evento) {
 
 // ===== FUNÇÕES DE TRANSAÇÕES =====
 
+// funcao deprecada, mostrava todas as transacoes independentemente do user
+
 // function carregar() {
 //     // Obtém transações do servidor e repovoa a UI
 //     fetch('/transacoes')
