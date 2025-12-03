@@ -99,12 +99,22 @@ function fazer_registar(evento) {
 
 // ===== FUNÇÕES DE TRANSAÇÕES =====
 
+// function carregar() {
+//     // Obtém transações do servidor e repovoa a UI
+//     fetch('/transacoes')
+//         .then(function(resposta) { return resposta.json(); })
+//         .then(function(dados) { transacoes = dados; mostrar(); })
+//         .catch(function(erro) { console.log('Erro ao carregar:', erro); });
+// }
+
 function carregar() {
-    // Obtém transações do servidor e repovoa a UI
-    fetch('/transacoes')
-        .then(function(resposta) { return resposta.json(); })
-        .then(function(dados) { transacoes = dados; mostrar(); })
-        .catch(function(erro) { console.log('Erro ao carregar:', erro); });
+    fetch('/transacoes?userId=' + usuarioAtual.id)
+        .then(resposta => resposta.json())
+        .then(dados => {
+            transacoes = dados;
+            mostrar();
+        })
+        .catch(erro => console.log('Erro ao carregar:', erro));
 }
 
 function adicionar(evento) {
@@ -121,7 +131,8 @@ function adicionar(evento) {
         date: data,
         type: tipo,
         category: categoria,
-        amount: parseFloat(valor)
+        amount: parseFloat(valor),
+        userId: usuarioAtual.id
     };
     
     if (isNaN(transacao.amount) || transacao.amount <= 0) {

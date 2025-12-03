@@ -13,5 +13,6 @@ namespace ProjetoFinancas.Classes
         {
             Console.WriteLine(" relatórios...");
         }
+        public string UserType { get; set; } = "admin";
     }
 }

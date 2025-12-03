@@ -63,7 +63,19 @@ app.MapPost("/login", (LoginRequest request) =>
 });
 
 // Endpoint: obter todas as transacoes (em memoria)
-app.MapGet("/transacoes", () => Results.Ok(transacoes));
+
+// app.MapGet("/transacoes", () => Results.Ok(transacoes));
+
+app.MapGet("/transacoes", (int userId) =>
+{
+    var userTransacoes = transacoes
+        .Where(t => t.UserId == userId)
+        .ToList();
+
+    return Results.Ok(userTransacoes);
+});
+
+
 
 // Endpoint: obter categorias válidas
 app.MapGet("/categorias", () => Results.Ok(categoriasValidas));
