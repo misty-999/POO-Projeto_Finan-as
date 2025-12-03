@@ -1,1 +1,20 @@
-
+[
+  {
+    "Number": 1,
+    "Name": "Transa\u00E7ao1",
+    "Date": "2005-05-05T00:00:00",
+    "Type": "Despesa",
+    "Category": "Transporte",
+    "Amount": 0.1,
+    "UserId": 1
+  },
+  {
+    "Number": 2,
+    "Name": "Transa\u00E7ao2",
+    "Date": "2005-05-05T00:00:00",
+    "Type": "Receita",
+    "Category": "Moradia",
+    "Amount": 10,
+    "UserId": 1
+  }
+]

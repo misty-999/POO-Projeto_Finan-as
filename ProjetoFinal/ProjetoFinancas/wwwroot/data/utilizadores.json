@@ -1,1 +1,8 @@
-
+[
+  {
+    "Id": 1,
+    "Username": "miguel",
+    "Password": "123",
+    "UserType": "comum"
+  }
+]
