@@ -1,6 +1,6 @@
 @startuml
 actor Utilizador
-Utilizador -> InterfaceLogin : Introduzir email e senha
+Utilizador -> InterfaceLogin : Introduzir nome e senha
 InterfaceLogin -> GuardarDados : Verificar credenciais
 GuardarDados --> InterfaceLogin : Resultado (válido/inválido)
 InterfaceLogin --> Utilizador : Mostrar mensagem

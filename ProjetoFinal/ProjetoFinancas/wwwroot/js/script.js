@@ -8,11 +8,13 @@ var chart = null;
 // ===== FUNÇÕES DE AUTENTICAÇÃO =====
 
 function mostrar_login() {
+    // Exibe modal de login e esconde o de registo
     document.getElementById('login-modal').style.display = 'flex';
     document.getElementById('registar-modal').style.display = 'none';
 }
 
 function mostrar_registar() {
+    // Exibe modal de registo e esconde o de login
     document.getElementById('login-modal').style.display = 'none';
     document.getElementById('registar-modal').style.display = 'flex';
 }
@@ -20,6 +22,7 @@ function mostrar_registar() {
 function fazer_login(evento) {
     evento.preventDefault();
     
+    // Lê credenciais e tenta autenticar no backend
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     var credenciais = { username: username, password: password };
@@ -50,6 +53,7 @@ function fazer_login(evento) {
 }
 
 function fazer_logout() {
+    // Limpa estado de autenticação e volta ao modal de login
     usuarioLogado = false;
     usuarioAtual = null;
     document.getElementById('conteudo-principal').style.display = 'none';
@@ -61,6 +65,7 @@ function fazer_logout() {
 function fazer_registar(evento) {
     evento.preventDefault();
     
+    // Valida dados do formulário antes de enviar
     var username = document.getElementById('username-registar').value;
     var password = document.getElementById('password-registar').value;
     var confirmacao = document.getElementById('password-confirmacao').value;
@@ -95,6 +100,7 @@ function fazer_registar(evento) {
 // ===== FUNÇÕES DE TRANSAÇÕES =====
 
 function carregar() {
+    // Obtém transações do servidor e repovoa a UI
     fetch('/transacoes')
         .then(function(resposta) { return resposta.json(); })
         .then(function(dados) { transacoes = dados; mostrar(); })
