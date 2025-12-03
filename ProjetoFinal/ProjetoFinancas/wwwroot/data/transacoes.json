@@ -16,5 +16,32 @@
     "Category": "Moradia",
     "Amount": 10,
     "UserId": 1
+  },
+  {
+    "Number": 3,
+    "Name": "banana",
+    "Date": "2025-12-03T00:00:00",
+    "Type": "Despesa",
+    "Category": "Alimenta\u00E7\u00E3o",
+    "Amount": 0.5,
+    "UserId": 2
+  },
+  {
+    "Number": 4,
+    "Name": "autocarro",
+    "Date": "2025-12-03T00:00:00",
+    "Type": "Despesa",
+    "Category": "Transporte",
+    "Amount": 1.1,
+    "UserId": 2
+  },
+  {
+    "Number": 5,
+    "Name": "renda",
+    "Date": "2025-12-03T00:00:00",
+    "Type": "Despesa",
+    "Category": "Moradia",
+    "Amount": 750,
+    "UserId": 2
   }
 ]
