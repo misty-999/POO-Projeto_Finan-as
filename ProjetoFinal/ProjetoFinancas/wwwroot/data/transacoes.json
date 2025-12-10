@@ -43,5 +43,14 @@
     "Category": "Moradia",
     "Amount": 750,
     "UserId": 2
+  },
+  {
+    "Number": 7,
+    "Name": "teste",
+    "Date": "2005-04-03T00:00:00",
+    "Type": "Receita",
+    "Category": "Alimenta\u00E7\u00E3o",
+    "Amount": 10,
+    "UserId": 3
   }
 ]

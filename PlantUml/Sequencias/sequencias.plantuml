@@ -20,7 +20,7 @@ User -> UITransacao: Set_Descricao(Descricao)
 UITransacao -> Transacao: set_Descricao(Descricao)
 
 User -> UITransacao: Set_Valor(Valor)
-UITransacao -> Transacao: set_Valor(Valor)
+UITransacao -> Transacao: set_Valor(Valor)--
 
 User -> UITransacao: Set_Data(Data)
 UITransacao -> Transacao: set_Data(Data)

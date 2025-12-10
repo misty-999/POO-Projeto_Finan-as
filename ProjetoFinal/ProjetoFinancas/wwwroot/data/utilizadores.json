@@ -10,5 +10,11 @@
     "Username": "rui",
     "Password": "1234",
     "UserType": "comum"
+  },
+  {
+    "Id": 3,
+    "Username": "teste",
+    "Password": "12345",
+    "UserType": "comum"
   }
 ]
