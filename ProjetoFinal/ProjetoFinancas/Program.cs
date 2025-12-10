@@ -4,6 +4,7 @@
 // - /transacoes (GET/POST/PUT/DELETE) : CRUD basico de transacoes
 // Persistencia: usa a classe Persistencia para ler/gravar ficheiros JSON em wwwroot/data/
 // Nota de seguranca: senhas sao comparadas em texto plano neste exemplo - nao usar em producao.
+
 using ProjetoFinancas.Classes;
 
 
