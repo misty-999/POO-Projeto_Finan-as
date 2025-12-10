@@ -12,9 +12,9 @@
     "UserType": "comum"
   },
   {
-    "Id": 3,
-    "Username": "teste",
-    "Password": "12345",
-    "UserType": "comum"
+    "Id": 5,
+    "Username": "admin",
+    "Password": "admin",
+    "UserType": "admin"
   }
 ]

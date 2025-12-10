@@ -57,15 +57,46 @@
         </select>
         <select id="categoria" required>
           <option value="">-- Categoria --</option>
-          <option value="Alimentação">Alimentação</option>
-          <option value="Transporte">Transporte</option>
-          <option value="Moradia">Moradia</option>
-          <option value="Lazer">Lazer</option>
-          <option value="Saúde">Saúde</option>
         </select>
         <button type="submit" id="submit-btn">Adicionar</button>
         <button type="button" id="cancelar-edicao" style="display: none;" onclick="cancelarEdicao()">Cancelar</button>
       </form>
+    </section>
+
+    <section id="categorias">
+      <h2>Gerir Categorias</h2>
+      <form id="categoria-form" onsubmit="guardarCategoria(event)">
+        <input type="text" id="nome-categoria" placeholder="Nome da categoria" required>
+        <input type="text" id="descricao-categoria" placeholder="Descrição (opcional)">
+        <button type="submit" id="categoria-submit-btn">Adicionar categoria</button>
+        <button type="button" id="cancelar-edicao-categoria" style="display: none;" onclick="cancelarEdicaoCategoria()">Cancelar</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaCategorias"></tbody>
+      </table>
+    </section>
+
+    <section id="admin-utilizadores" style="display: none;">
+      <h2>Admin: Utilizadores</h2>
+      <p>Listagem de utilizadores e remoção (apenas administradores).</p>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Perfil</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaUtilizadores"></tbody>
+      </table>
     </section>
 
     <section id="transactions">
@@ -111,8 +142,6 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="js/script.js?v=4"></script>
+  <script src="js/script.js?v=6"></script>
 </body>
 </html>
-
-

@@ -23,5 +23,10 @@
     "Id": 5,
     "Nome": "Sa\u00FAde",
     "Descricao": "Despesas com sa\u00FAde"
+  },
+  {
+    "Id": 6,
+    "Nome": "Teste",
+    "Descricao": "Receitas teste"
   }
 ]

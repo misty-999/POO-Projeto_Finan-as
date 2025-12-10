@@ -1,11 +1,27 @@
 // Variáveis globais
 var transacoes = [];
+var categorias = [];
+var utilizadores = [];
 var usuarioLogado = false;
 var usuarioAtual = null;
 var editingNumber = null;
+var editingCategoriaId = null;
 var chart = null;
+var STORAGE_USER_KEY = 'usuarioAtual';
 
 // ===== FUNÇÕES DE AUTENTICAÇÃO =====
+
+function ehAdmin() {
+    if (!usuarioAtual) return false;
+    var tipo = usuarioAtual.userType || usuarioAtual.UserType;
+    return (tipo || '').toLowerCase() === 'admin';
+}
+
+function alternarSecaoAdmin() {
+    var secao = document.getElementById('admin-utilizadores');
+    if (!secao) return;
+    secao.style.display = ehAdmin() ? 'block' : 'none';
+}
 
 function mostrar_login() {
     // Exibe modal de login e esconde o de registo
@@ -22,7 +38,6 @@ function mostrar_registar() {
 function fazer_login(evento) {
     evento.preventDefault();
     
-    // Lê credenciais e tenta autenticar no backend
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     var credenciais = { username: username, password: password };
@@ -45,7 +60,13 @@ function fazer_login(evento) {
         document.getElementById('registar-modal').style.display = 'none';
         document.getElementById('conteudo-principal').style.display = 'block';
         document.getElementById('login-form').reset();
-        carregar();
+        localStorage.setItem(STORAGE_USER_KEY, JSON.stringify(usuarioAtual));
+        alternarSecaoAdmin();
+        carregarCategorias().then(() => {
+            if (ehAdmin()) {
+                return carregarUtilizadores();
+            }
+        }).then(carregar);
     })
     .catch(function(erro) {
         alert('Erro: ' + erro.message);
@@ -56,10 +77,18 @@ function fazer_logout() {
     // Limpa estado de autenticação e volta ao modal de login
     usuarioLogado = false;
     usuarioAtual = null;
+    transacoes = [];
+    categorias = [];
+    mostrarCategorias();
+    utilizadores = [];
+    mostrarUtilizadores();
+    atualizarSelectCategorias();
+    document.getElementById('tabelaTransacoes').innerHTML = '';
     document.getElementById('conteudo-principal').style.display = 'none';
     document.getElementById('user-info').style.display = 'none';
     document.getElementById('user-name').textContent = '';
     document.getElementById('login-modal').style.display = 'flex';
+    localStorage.removeItem(STORAGE_USER_KEY);
 }
 
 function fazer_registar(evento) {
@@ -75,7 +104,7 @@ function fazer_registar(evento) {
         return;
     }
     
-    var utilizador = { username: username, password: password, perfil: 'comum' };
+    var utilizador = { username: username, password: password, userType: 'comum' };
     fetch('/registar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -83,7 +112,7 @@ function fazer_registar(evento) {
     })
     .then(function(resposta) {
         if (resposta.ok) {
-            alert('✅ Registo realizado com sucesso! Faz login agora.');
+            alert('Registo realizado com sucesso! Faz login agora.');
             document.getElementById('registar-form').reset();
             mostrar_login();
         } else {
@@ -97,19 +126,212 @@ function fazer_registar(evento) {
     });
 }
 
+// ===== FUNÇÕES DE CATEGORIAS =====
+
+function carregarCategorias() {
+    return fetch('/categorias')
+        .then(resposta => resposta.json())
+        .then(dados => {
+            categorias = dados;
+            atualizarSelectCategorias();
+            mostrarCategorias();
+        })
+        .catch(erro => {
+            console.log('Erro ao carregar categorias:', erro);
+        });
+}
+
+function atualizarSelectCategorias() {
+    var select = document.getElementById('categoria');
+    if (!select) return;
+
+    var valorAtual = select.value;
+    select.innerHTML = '<option value="">-- Categoria --</option>';
+
+    categorias.forEach(function(cat) {
+        var nome = cat.nome || cat.Nome;
+        if (!nome) return;
+        var option = document.createElement('option');
+        option.value = nome;
+        option.textContent = nome;
+        select.appendChild(option);
+    });
+
+    if (valorAtual && categorias.some(c => (c.nome || c.Nome) === valorAtual)) {
+        select.value = valorAtual;
+    }
+}
+
+function guardarCategoria(evento) {
+    evento.preventDefault();
+
+    var nome = document.getElementById('nome-categoria').value.trim();
+    var descricao = document.getElementById('descricao-categoria').value.trim();
+
+    if (!nome) {
+        alert('O nome da categoria é obrigatório.');
+        return;
+    }
+
+    var payload = { nome: nome, descricao: descricao };
+    var url = '/categorias';
+    var metodo = 'POST';
+
+    if (editingCategoriaId !== null) {
+        url += '/' + editingCategoriaId;
+        metodo = 'PUT';
+    }
+
+    fetch(url, {
+        method: metodo,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+    .then(function(resposta) {
+        if (resposta.ok) {
+            cancelarEdicaoCategoria();
+            return carregarCategorias();
+        }
+        return resposta.text().then(function(texto) {
+            throw new Error(texto || 'Erro ao guardar categoria');
+        });
+    })
+    .catch(function(erro) {
+        alert('Erro: ' + erro.message);
+    });
+}
+
+function mostrarCategorias() {
+    var tabela = document.getElementById('tabelaCategorias');
+    if (!tabela) return;
+
+    tabela.innerHTML = '';
+
+    if (categorias.length === 0) {
+        tabela.innerHTML = '<tr><td colspan="3">Nenhuma categoria registada.</td></tr>';
+        return;
+    }
+
+    categorias.forEach(function(cat) {
+        var nome = cat.nome || cat.Nome || '';
+        var descricao = cat.descricao || cat.Descricao || '';
+
+        var html = '<tr>';
+        html += '<td>' + nome + '</td>';
+        html += '<td>' + (descricao || '-') + '</td>';
+        html += '<td><button class="edit-btn" onclick="iniciarEdicaoCategoria(' + (cat.id || cat.Id) + ')">Editar</button></td>';
+        html += '</tr>';
+        tabela.innerHTML = tabela.innerHTML + html;
+    });
+}
+
+function iniciarEdicaoCategoria(id) {
+    var cat = categorias.find(function(c) { return c.id === id || c.Id === id; });
+    if (!cat) { alert('Categoria não encontrada'); return; }
+
+    document.getElementById('nome-categoria').value = cat.nome || cat.Nome || '';
+    document.getElementById('descricao-categoria').value = cat.descricao || cat.Descricao || '';
+
+    editingCategoriaId = cat.id || cat.Id;
+    document.getElementById('categoria-submit-btn').textContent = 'Guardar alterações';
+    document.getElementById('cancelar-edicao-categoria').style.display = 'inline-block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function cancelarEdicaoCategoria() {
+    editingCategoriaId = null;
+    var form = document.getElementById('categoria-form');
+    if (form) form.reset();
+    var btn = document.getElementById('categoria-submit-btn');
+    if (btn) btn.textContent = 'Adicionar categoria';
+    var cancelBtn = document.getElementById('cancelar-edicao-categoria');
+    if (cancelBtn) cancelBtn.style.display = 'none';
+}
+
+// ===== FUNÇÕES DE ADMINISTRAÇÃO DE UTILIZADORES =====
+
+function carregarUtilizadores() {
+    if (!ehAdmin()) return Promise.resolve();
+
+    return fetch('/utilizadores?adminId=' + usuarioAtual.id)
+        .then(resposta => {
+            if (resposta.ok) return resposta.json();
+            throw new Error('Não autorizado');
+        })
+        .then(dados => {
+            utilizadores = dados;
+            mostrarUtilizadores();
+        })
+        .catch(erro => console.log('Erro ao carregar utilizadores:', erro));
+}
+
+function mostrarUtilizadores() {
+    var tabela = document.getElementById('tabelaUtilizadores');
+    if (!tabela) return;
+
+    tabela.innerHTML = '';
+
+    if (!ehAdmin()) {
+        tabela.innerHTML = '<tr><td colspan="4">Apenas administradores podem ver utilizadores.</td></tr>';
+        return;
+    }
+
+    if (utilizadores.length === 0) {
+        tabela.innerHTML = '<tr><td colspan="4">Sem utilizadores.</td></tr>';
+        return;
+    }
+
+    utilizadores.forEach(function(u) {
+        var id = u.id || u.Id;
+        var username = u.username || u.Username;
+        var perfil = u.userType || u.UserType || 'comum';
+        var isAdminRow = perfil.toLowerCase() === 'admin';
+
+        var html = '<tr>';
+        html += '<td>' + id + '</td>';
+        html += '<td>' + username + '</td>';
+        html += '<td>' + perfil + '</td>';
+        html += '<td>';
+        if (!isAdminRow) {
+            html += '<button class="delete-btn" onclick="deletarUtilizador(' + id + ')">Eliminar</button>';
+        } else {
+            html += '-';
+        }
+        html += '</td>';
+        html += '</tr>';
+
+        tabela.innerHTML = tabela.innerHTML + html;
+    });
+}
+
+function deletarUtilizador(id) {
+    if (!ehAdmin()) {
+        alert('Apenas administradores podem eliminar utilizadores.');
+        return;
+    }
+
+    if (id === usuarioAtual.id) {
+        alert('Não pode eliminar o seu próprio utilizador.');
+        return;
+    }
+
+    if (!confirm('Eliminar utilizador #' + id + ' e respetivas transações?')) return;
+
+    fetch('/utilizadores/' + id + '?adminId=' + usuarioAtual.id, { method: 'DELETE' })
+        .then(resposta => {
+            if (resposta.ok) {
+                return carregarUtilizadores().then(carregar);
+            }
+            return resposta.text().then(texto => { throw new Error(texto || 'Falha ao eliminar'); });
+        })
+        .catch(erro => alert('Erro: ' + erro.message));
+}
+
 // ===== FUNÇÕES DE TRANSAÇÕES =====
 
-// funcao deprecada, mostrava todas as transacoes independentemente do user
-
-// function carregar() {
-//     // Obtém transações do servidor e repovoa a UI
-//     fetch('/transacoes')
-//         .then(function(resposta) { return resposta.json(); })
-//         .then(function(dados) { transacoes = dados; mostrar(); })
-//         .catch(function(erro) { console.log('Erro ao carregar:', erro); });
-// }
-
 function carregar() {
+    if (!usuarioAtual) return;
+
     fetch('/transacoes?userId=' + usuarioAtual.id)
         .then(resposta => resposta.json())
         .then(dados => {
@@ -126,13 +348,13 @@ function adicionar(evento) {
     var valor = document.getElementById('valor').value;
     var data = document.getElementById('data').value;
     var tipo = document.getElementById('tipo').value;
-    var categoria = document.getElementById('categoria').value;
+    var categoriaSelecionada = document.getElementById('categoria').value;
 
     var transacao = {
         name: descricao,
         date: data,
         type: tipo,
-        category: categoria,
+        category: categoriaSelecionada,
         amount: parseFloat(valor),
         userId: usuarioAtual.id
     };
@@ -149,7 +371,8 @@ function adicionar(evento) {
             body: JSON.stringify(transacao) 
         })
         .then(function(resposta) { 
-            document.querySelector('form').reset(); 
+            var form = document.getElementById('transaction-form');
+            if (form) form.reset();
             cancelarEdicao(); 
             carregar(); 
         })
@@ -161,7 +384,8 @@ function adicionar(evento) {
             body: JSON.stringify(transacao) 
         })
         .then(function(resposta) { 
-            document.querySelector('form').reset(); 
+            var form = document.getElementById('transaction-form');
+            if (form) form.reset();
             carregar(); 
         })
         .catch(function(erro) { console.log('Erro ao adicionar:', erro); });
@@ -175,7 +399,7 @@ function mostrar() {
     for (var i = 0; i < transacoes.length; i++) {
         var t = transacoes[i];
         var d = new Date(t.date).toLocaleDateString('pt-PT', { timeZone: 'UTC' });
-        var v = t.amount.toFixed(2);
+        var v = parseFloat(t.amount).toFixed(2);
         var icon = (t.type === 'Receita') ? 'R' : 'D';
 
         var html = '<tr>';
@@ -240,10 +464,12 @@ function calcular() {
 
     for (var i = 0; i < transacoes.length; i++) {
         var t = transacoes[i];
+        var valor = parseFloat(t.amount);
+        if (isNaN(valor)) continue;
         if (t.type === 'Receita') {
-            receitas = receitas + t.amount;
+            receitas = receitas + valor;
         } else {
-            despesas = despesas + t.amount;
+            despesas = despesas + valor;
         }
     }
 
@@ -253,7 +479,6 @@ function calcular() {
     document.getElementById('totalDespesas').textContent = despesas.toFixed(2);
     document.getElementById('saldo').textContent = saldo.toFixed(2);
     
-    // Atualizar gráfico
     atualizarGrafico(receitas, despesas, saldo);
 }
 
@@ -261,12 +486,10 @@ function atualizarGrafico(receitas, despesas, saldo) {
     var ctx = document.getElementById('relatorioChart');
     
     if (ctx) {
-        // Destruir gráfico anterior se existir
         if (chart) {
             chart.destroy();
         }
         
-        // Criar novo gráfico
         chart = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -315,8 +538,29 @@ function atualizarGrafico(receitas, despesas, saldo) {
 // ===== INICIALIZAÇÃO =====
 
 window.onload = function() {
+    try {
+        var guardado = localStorage.getItem(STORAGE_USER_KEY);
+        if (guardado) {
+            usuarioAtual = JSON.parse(guardado);
+            usuarioLogado = true;
+            document.getElementById('user-name').textContent = usuarioAtual.username || '';
+            document.getElementById('user-info').style.display = 'inline-flex';
+            document.getElementById('login-modal').style.display = 'none';
+            document.getElementById('registar-modal').style.display = 'none';
+            document.getElementById('conteudo-principal').style.display = 'block';
+            alternarSecaoAdmin();
+            carregarCategorias().then(function() {
+                if (ehAdmin()) {
+                    return carregarUtilizadores();
+                }
+            }).then(carregar);
+            return;
+        }
+    } catch (e) {
+        console.log('Falha ao recuperar sessao guardada:', e);
+    }
+
     document.getElementById('login-modal').style.display = 'flex';
     document.getElementById('registar-modal').style.display = 'none';
     document.getElementById('conteudo-principal').style.display = 'none';
 };
-
