@@ -11,16 +11,17 @@ var STORAGE_USER_KEY = 'usuarioAtual';
 
 // ===== FUNÇÕES DE AUTENTICAÇÃO =====
 
-function ehAdmin() {
+function isAdmin() {
     if (!usuarioAtual) return false;
     var tipo = usuarioAtual.userType || usuarioAtual.UserType;
     return (tipo || '').toLowerCase() === 'admin';
 }
 
 function alternarSecaoAdmin() {
+    // Gerir Users
     var secao = document.getElementById('admin-utilizadores');
     if (!secao) return;
-    secao.style.display = ehAdmin() ? 'block' : 'none';
+    secao.style.display = isAdmin() ? 'block' : 'none';
 }
 
 function mostrar_login() {
@@ -63,7 +64,7 @@ function fazer_login(evento) {
         localStorage.setItem(STORAGE_USER_KEY, JSON.stringify(usuarioAtual));
         alternarSecaoAdmin();
         carregarCategorias().then(() => {
-            if (ehAdmin()) {
+            if (isAdmin()) {
                 return carregarUtilizadores();
             }
         }).then(carregar);
@@ -202,40 +203,45 @@ function guardarCategoria(evento) {
 }
 
 function mostrarCategorias() {
-    var tabela = document.getElementById('tabelaCategorias');
-    if (!tabela) return;
+        var tabela = document.getElementById('tabelaCategorias');
+        if (!tabela) return;
 
-    tabela.innerHTML = '';
+        tabela.innerHTML = '';
 
-    if (categorias.length === 0) {
-        tabela.innerHTML = '<tr><td colspan="3">Nenhuma categoria registada.</td></tr>';
-        return;
-    }
+        if (categorias.length === 0) {
+            tabela.innerHTML = '<tr><td colspan="3">Nenhuma categoria registada.</td></tr>';
+            return;
+        }
 
-    categorias.forEach(function(cat) {
-        var nome = cat.nome || cat.Nome || '';
-        var descricao = cat.descricao || cat.Descricao || '';
+        categorias.forEach(function (cat) {
+            var nome = cat.nome || cat.Nome || '';
+            var descricao = cat.descricao || cat.Descricao || '';
 
-        var html = '<tr>';
-        html += '<td>' + nome + '</td>';
-        html += '<td>' + (descricao || '-') + '</td>';
-        html += '<td><button class="edit-btn" onclick="iniciarEdicaoCategoria(' + (cat.id || cat.Id) + ')">Editar</button></td>';
-        html += '</tr>';
-        tabela.innerHTML = tabela.innerHTML + html;
-    });
+            var html = '<tr>';
+            html += '<td>' + nome + '</td>';
+            html += '<td>' + (descricao || '-') + '</td>';
+            html += '<td><button class="edit-btn" onclick="iniciarEdicaoCategoria(' + (cat.id || cat.Id) + ')">Editar</button></td>';
+            html += '</tr>';
+            tabela.innerHTML = tabela.innerHTML + html;
+        });
 }
 
 function iniciarEdicaoCategoria(id) {
-    var cat = categorias.find(function(c) { return c.id === id || c.Id === id; });
-    if (!cat) { alert('Categoria não encontrada'); return; }
+        var cat = categorias.find(function (c) {
+            return c.id === id || c.Id === id;
+        });
+        if (!cat) {
+            alert('Categoria não encontrada');
+            return;
+        }
 
-    document.getElementById('nome-categoria').value = cat.nome || cat.Nome || '';
-    document.getElementById('descricao-categoria').value = cat.descricao || cat.Descricao || '';
+        document.getElementById('nome-categoria').value = cat.nome || cat.Nome || '';
+        document.getElementById('descricao-categoria').value = cat.descricao || cat.Descricao || '';
 
-    editingCategoriaId = cat.id || cat.Id;
-    document.getElementById('categoria-submit-btn').textContent = 'Guardar alterações';
-    document.getElementById('cancelar-edicao-categoria').style.display = 'inline-block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+        editingCategoriaId = cat.id || cat.Id;
+        document.getElementById('categoria-submit-btn').textContent = 'Guardar alterações';
+        document.getElementById('cancelar-edicao-categoria').style.display = 'inline-block';
+        window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 function cancelarEdicaoCategoria() {
@@ -251,7 +257,7 @@ function cancelarEdicaoCategoria() {
 // ===== FUNÇÕES DE ADMINISTRAÇÃO DE UTILIZADORES =====
 
 function carregarUtilizadores() {
-    if (!ehAdmin()) return Promise.resolve();
+    if (!isAdmin()) return Promise.resolve();
 
     return fetch('/utilizadores?adminId=' + usuarioAtual.id)
         .then(resposta => {
@@ -271,7 +277,7 @@ function mostrarUtilizadores() {
 
     tabela.innerHTML = '';
 
-    if (!ehAdmin()) {
+    if (!isAdmin()) {
         tabela.innerHTML = '<tr><td colspan="4">Apenas administradores podem ver utilizadores.</td></tr>';
         return;
     }
@@ -305,7 +311,7 @@ function mostrarUtilizadores() {
 }
 
 function deletarUtilizador(id) {
-    if (!ehAdmin()) {
+    if (!isAdmin()) {
         alert('Apenas administradores podem eliminar utilizadores.');
         return;
     }
@@ -550,7 +556,7 @@ window.onload = function() {
             document.getElementById('conteudo-principal').style.display = 'block';
             alternarSecaoAdmin();
             carregarCategorias().then(function() {
-                if (ehAdmin()) {
+                if (isAdmin()) {
                     return carregarUtilizadores();
                 }
             }).then(carregar);

@@ -5,8 +5,9 @@
 // - /transacoes (GET/POST/PUT/DELETE) : CRUD basico de transacoes
 // Persistencia: usa a classe Persistencia para ler/gravar ficheiros JSON em wwwroot/data/
 // Nota de seguranca: senhas sao comparadas em texto plano neste exemplo - nao usar em producao.
-
+using Microsoft.AspNetCore.Identity;
 using ProjetoFinancas.Classes;
+var passwordHasher = new PasswordHasher<Utilizador>();
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
@@ -34,19 +35,23 @@ utilizadores.AddRange(taskUtilizadores.Result);
 var taskCategorias = persistencia.CarregarCategorias();
 taskCategorias.Wait();
 categorias.AddRange(taskCategorias.Result);
-
 // Criar um administrador predefinido se não existir
 if (!utilizadores.Any(u => u.UserType == "admin"))
 {
-    utilizadores.Add(new Utilizador
+    var admin = new Utilizador
     {
         Id = utilizadores.Any() ? utilizadores.Max(u => u.Id) + 1 : 1,
         Username = "admin",
-        Password = "admin",
         UserType = "admin"
-    });
+    };
+
+    // Hash the default password ONCE
+    admin.PasswordHash = passwordHasher.HashPassword(admin, "admin");
+
+    utilizadores.Add(admin);
     persistencia.GuardarUtilizadores(utilizadores).Wait();
 }
+
 
 // Se nao houver categorias guardadas, criar algumas por defeito
 if (!categorias.Any())
@@ -71,42 +76,105 @@ app.MapGet("/", context =>
 // Endpoint: registar novo utilizador
 // Recebe JSON com um Utilizador (Username, Password, Perfil). Verifica unicidade do Username,
 // adiciona a lista em memoria e grava em utilizadores.json.
-app.MapPost("/registar", async (Utilizador novo) =>
+
+// OLD
+// app.MapPost("/registar", async (Utilizador novo) =>
+// {
+//     if (utilizadores.Any(u => u.Username == novo.Username))
+//         return Results.BadRequest("Utilizador ja existe");
+//
+//     novo.Id = utilizadores.Count + 1;
+//     
+//     // Hash the password
+//     novo.PasswordHash = passwordHasher.HashPassword(novo, novo.PasswordHash);
+//     
+//     utilizadores.Add(novo);
+//     await persistencia.GuardarUtilizadores(utilizadores);
+//     return Results.Ok(novo);
+// });
+// End OLD
+
+app.MapPost("/registar", async (RegisterRequest request) =>
 {
-    if (utilizadores.Any(u => u.Username == novo.Username))
+    if (utilizadores.Any(u => u.Username == request.Username))
         return Results.BadRequest("Utilizador ja existe");
 
-    novo.Id = utilizadores.Count + 1;
+    var novo = new Utilizador
+    {
+        Id = utilizadores.Count + 1,
+        Username = request.Username,
+        UserType = request.UserType,
+        PasswordHash = passwordHasher.HashPassword(null!, request.Password)
+    };
+
     utilizadores.Add(novo);
     await persistencia.GuardarUtilizadores(utilizadores);
-    return Results.Ok(novo);
+
+    return Results.Ok();
 });
+
+
 
 // Endpoint: login
 // Recebe LoginRequest (Username, Password). Procura utilizador na lista carregada da persistencia.
 // Retorna 200 com dados minimos do utilizador ou 401 se as credenciais falharem.
 // Nota: para producao, comparar hashes em vez de texto simples e devolver um token/cookie.
+
+// OLD
+// app.MapPost("/login", (LoginRequest request) =>
+// {
+//     var user = utilizadores
+//         .Where(u => u.Username == request.Username && u.PasswordHash == request.Password)
+//         .OrderByDescending(u => u.UserType.Equals("admin", StringComparison.OrdinalIgnoreCase)) // prioriza admin quando houver duplicados
+//         .FirstOrDefault();
+//     if (user == null)
+//         return Results.Unauthorized();
+//     
+//     return Results.Ok(new { id = user.Id, username = user.Username, userType = user.UserType });
+// });
+//
+// // Endpoint: obter todas as transacoes do user logado (em memoria)
+// app.MapGet("/transacoes", (int userId) =>
+// {
+//     var userTransacoes = transacoes
+//         .Where(t => t.UserId == userId)
+//         .ToList();
+//
+//     return Results.Ok(userTransacoes);
+// });
+// End OLD
 app.MapPost("/login", (LoginRequest request) =>
 {
     var user = utilizadores
-        .Where(u => u.Username == request.Username && u.Password == request.Password)
-        .OrderByDescending(u => u.UserType.Equals("admin", StringComparison.OrdinalIgnoreCase)) // prioriza admin quando houver duplicados
+        .Where(u => u.Username == request.Username)
+        .OrderByDescending(u => u.UserType.Equals("admin", StringComparison.OrdinalIgnoreCase))
         .FirstOrDefault();
+
     if (user == null)
         return Results.Unauthorized();
+
+    var result = passwordHasher.VerifyHashedPassword(
+        user,
+        user.PasswordHash,
+        request.Password
+    );
     
-    return Results.Ok(new { id = user.Id, username = user.Username, userType = user.UserType });
+    Console.WriteLine(result);
+    Console.WriteLine(request.Password);
+    Console.WriteLine(user.PasswordHash);
+    
+    if (result == PasswordVerificationResult.Failed)
+        return Results.Unauthorized();
+
+    return Results.Ok(new
+    {
+        id = user.Id,
+        username = user.Username,
+        userType = user.UserType
+    });
 });
 
-// Endpoint: obter todas as transacoes do user logado (em memoria)
-app.MapGet("/transacoes", (int userId) =>
-{
-    var userTransacoes = transacoes
-        .Where(t => t.UserId == userId)
-        .ToList();
 
-    return Results.Ok(userTransacoes);
-});
 
 // Endpoint: listar categorias
 app.MapGet("/categorias", () => Results.Ok(categorias));
