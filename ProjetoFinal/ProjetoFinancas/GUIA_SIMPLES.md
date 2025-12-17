@@ -6,20 +6,6 @@ Aplicação web para **guardar e controlar dinheiro**: quanto entra, quanto sai,
 
 ---
 
-## Como funciona?
-
-### 1️⃣ O Utilizador
-
-```
-1. Acede a http://localhost:5000
-2. Vê tela de LOGIN
-3. Se não tem conta → REGISTA
-4. Se tem conta → FAZ LOGIN
-5. Vê tabela com dinheiro
-6. Pode ADICIONAR ou APAGAR transações
-7. Clica SAIR para terminar
-```
-
 ### 2️⃣ O Computador (Backend)
 
 **Guarda 2 tipos de ficheiros JSON:**
