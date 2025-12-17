@@ -1,48 +1,55 @@
 // Variáveis globais
-var transacoes = [];
-var categorias = [];
-var utilizadores = [];
-var usuarioLogado = false;
-var usuarioAtual = null;
-var editingNumber = null;
-var editingCategoriaId = null;
-var chart = null;
-var STORAGE_USER_KEY = 'usuarioAtual';
+// Guarda o estado da aplicação no front-end: listas carregadas e controlo de edição
+var transacoes = []; // lista de transações do utilizador atual
+var categorias = []; // lista de categorias disponíveis
+var utilizadores = []; // lista de utilizadores (apenas acessível a admins)
+var usuarioLogado = false; // flag simples de sessão no front-end
+var usuarioAtual = null; // objeto com dados do utilizador autenticado
+var editingNumber = null; // id/numero da transação que está a ser editada
+var editingCategoriaId = null; // id da categoria que está a ser editada
+var chart = null; // instância do Chart.js para o gráfico
+var STORAGE_USER_KEY = 'usuarioAtual'; // chave usada no localStorage para persistir sessão
 
 // ===== FUNÇÕES DE AUTENTICAÇÃO =====
 
 function isAdmin() {
+    // Verifica se o utilizador atual tem perfil de administrador.
+    // Suporta tanto `userType` como `UserType` dependendo da API/backend.
     if (!usuarioAtual) return false;
     var tipo = usuarioAtual.userType || usuarioAtual.UserType;
     return (tipo || '').toLowerCase() === 'admin';
 }
 
 function alternarSecaoAdmin() {
-    // Gerir Users
+    // Mostra ou esconde a secção de administração de utilizadores
+    // dependendo do perfil do utilizador logado.
     var secao = document.getElementById('admin-utilizadores');
     if (!secao) return;
     secao.style.display = isAdmin() ? 'block' : 'none';
 }
 
 function mostrar_login() {
-    // Exibe modal de login e esconde o de registo
+    // Exibe o modal de login e assegura que o modal de registo está escondido.
+    // Usado quando o utilizador escolhe efetuar login.
     document.getElementById('login-modal').style.display = 'flex';
     document.getElementById('registar-modal').style.display = 'none';
 }
 
 function mostrar_registar() {
-    // Exibe modal de registo e esconde o de login
+    // Exibe o modal de registo de novo utilizador e esconde o modal de login.
     document.getElementById('login-modal').style.display = 'none';
     document.getElementById('registar-modal').style.display = 'flex';
 }
 
 function fazer_login(evento) {
+    // Faz POST das credenciais para o endpoint de login e, em caso de sucesso,
+    // atualiza o estado da UI (mostra nome, esconde modal, carrega dados iniciais).
     evento.preventDefault();
-    
+
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     var credenciais = { username: username, password: password };
-    
+
     fetch('/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -53,6 +60,7 @@ function fazer_login(evento) {
         throw new Error('Utilizador ou password incorretos!');
     })
     .then(function(dados) {
+        // Atualiza estado local e persiste no localStorage para sessão
         usuarioLogado = true;
         usuarioAtual = dados;
         document.getElementById('user-name').textContent = usuarioAtual.username;
@@ -63,6 +71,7 @@ function fazer_login(evento) {
         document.getElementById('login-form').reset();
         localStorage.setItem(STORAGE_USER_KEY, JSON.stringify(usuarioAtual));
         alternarSecaoAdmin();
+        // Carrega categorias e, se for admin, também carrega utilizadores
         carregarCategorias().then(() => {
             if (isAdmin()) {
                 return carregarUtilizadores();
@@ -75,7 +84,7 @@ function fazer_login(evento) {
 }
 
 function fazer_logout() {
-    // Limpa estado de autenticação e volta ao modal de login
+    // Termina a sessão no front-end: limpa variáveis locais, UI e localStorage.
     usuarioLogado = false;
     usuarioAtual = null;
     transacoes = [];
@@ -93,18 +102,19 @@ function fazer_logout() {
 }
 
 function fazer_registar(evento) {
+    // Envia os dados de registo para o backend. Valida password localmente
+    // para evitar pedidos desnecessários ao servidor.
     evento.preventDefault();
-    
-    // Valida dados do formulário antes de enviar
+
     var username = document.getElementById('username-registar').value;
     var password = document.getElementById('password-registar').value;
     var confirmacao = document.getElementById('password-confirmacao').value;
-    
+
     if (password !== confirmacao) {
         alert('As passwords não correspondem!');
         return;
     }
-    
+
     var utilizador = { username: username, password: password, userType: 'comum' };
     fetch('/registar', {
         method: 'POST',
@@ -133,6 +143,7 @@ function carregarCategorias() {
     return fetch('/categorias')
         .then(resposta => resposta.json())
         .then(dados => {
+            // Atualiza lista local de categorias e atualiza UI
             categorias = dados;
             atualizarSelectCategorias();
             mostrarCategorias();
@@ -265,6 +276,7 @@ function carregarUtilizadores() {
             throw new Error('Não autorizado');
         })
         .then(dados => {
+            // Guarda lista de utilizadores (apenas para admins) e atualiza a tabela
             utilizadores = dados;
             mostrarUtilizadores();
         })
@@ -341,6 +353,7 @@ function carregar() {
     fetch('/transacoes?userId=' + usuarioAtual.id)
         .then(resposta => resposta.json())
         .then(dados => {
+            // Actualiza lista de transações do utilizador e renderiza tabela
             transacoes = dados;
             mostrar();
         })
