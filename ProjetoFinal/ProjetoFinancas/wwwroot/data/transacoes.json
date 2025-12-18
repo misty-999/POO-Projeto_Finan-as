@@ -19,29 +19,38 @@
   },
   {
     "Number": 3,
-    "Name": "banana",
-    "Date": "2025-12-03T00:00:00",
-    "Type": "Despesa",
-    "Category": "Alimenta\u00E7\u00E3o",
-    "Amount": 0.5,
-    "UserId": 2
+    "Name": "Transa\u00E7\u00E3o1",
+    "Date": "0005-05-05T00:00:00",
+    "Type": "Receita",
+    "Category": "Transporte",
+    "Amount": 5,
+    "UserId": 1
   },
   {
     "Number": 4,
-    "Name": "autocarro",
-    "Date": "2025-12-03T00:00:00",
+    "Name": "teste",
+    "Date": "1003-04-04T00:00:00",
     "Type": "Despesa",
     "Category": "Transporte",
-    "Amount": 1.1,
-    "UserId": 2
+    "Amount": 2,
+    "UserId": 1
   },
   {
     "Number": 5,
-    "Name": "renda",
-    "Date": "2025-12-03T00:00:00",
-    "Type": "Despesa",
-    "Category": "Moradia",
-    "Amount": 750,
+    "Name": "Transa\u00E7\u00E3o1",
+    "Date": "2005-05-05T00:00:00",
+    "Type": "Receita",
+    "Category": "Alimentacao",
+    "Amount": 5,
     "UserId": 2
+  },
+  {
+    "Number": 6,
+    "Name": "transa\u00E7ao 3",
+    "Date": "2005-06-05T00:00:00",
+    "Type": "Receita",
+    "Category": "Transporte",
+    "Amount": 3,
+    "UserId": 1
   }
 ]

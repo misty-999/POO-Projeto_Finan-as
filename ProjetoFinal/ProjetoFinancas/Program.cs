@@ -217,6 +217,16 @@ app.MapPut("/categorias/{id}", async (int id, Categoria atualizada) =>
 
 // Endpoint: criar transacao
 // Recebe um objeto Transacao (name, amount, date, type, category). Atribui Number e grava.
+// Endpoint: obter todas as transacoes do user logado (em memoria)
+app.MapGet("/transacoes", (int userId) =>
+{
+    var userTransacoes = transacoes
+        .Where(t => t.UserId == userId)
+        .ToList();
+
+    return Results.Ok(userTransacoes);
+});
+
 app.MapPost("/transacoes", async (Transacao nova) =>
 {
     // Validar valor positivo

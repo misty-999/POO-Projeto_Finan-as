@@ -4,5 +4,11 @@
     "Username": "admin",
     "PasswordHash": "AQAAAAIAAYagAAAAEGTjBUY/h0dUjg6MhLQN\u002BaOw4FqJgCDSaUkpWZ8oJB0Y/ekWI8dygf/DbtCsCLIrPA==",
     "UserType": "admin"
+  },
+  {
+    "Id": 2,
+    "Username": "miguel",
+    "PasswordHash": "AQAAAAIAAYagAAAAEB/Bwh77NL2xwPZzi4s4Dwd\u002BSwK03N9\u002BDMKHjmwWQcABhKl6VDMgG/f0bH0A/VaQ0A==",
+    "UserType": "comum"
   }
 ]
